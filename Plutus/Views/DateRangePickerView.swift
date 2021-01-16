@@ -13,7 +13,7 @@ struct DateRangePickerView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
+            HStack(alignment: .center) {
                 Text("Select Range")
                     .font(.custom(Fonts.quicksandSemiBold, size: 18))
                 Image(systemSymbol: .gear)
