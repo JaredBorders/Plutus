@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		B85565B725B37B7F00DD534D /* PlutusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565B625B37B7F00DD534D /* PlutusUITests.swift */; };
 		B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7826F25B394200015B8DF /* DateRangePickerView.swift */; };
 		B8F7827825B3942F0015B8DF /* ComparsionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */; };
+		B8F7828D25B39C0D0015B8DF /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = B8F7828C25B39C0D0015B8DF /* SFSafeSymbols */; };
 		C68F98E625B38B0600CC2950 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E125B38B0500CC2950 /* Quicksand-Light.ttf */; };
 		C68F98E725B38B0600CC2950 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E225B38B0600CC2950 /* Quicksand-Medium.ttf */; };
 		C68F98E825B38B0600CC2950 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E325B38B0600CC2950 /* Quicksand-Regular.ttf */; };
@@ -74,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F7828D25B39C0D0015B8DF /* SFSafeSymbols in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +261,9 @@
 			dependencies = (
 			);
 			name = Plutus;
+			packageProductDependencies = (
+				B8F7828C25B39C0D0015B8DF /* SFSafeSymbols */,
+			);
 			productName = Plutus;
 			productReference = B855659125B37B7E00DD534D /* Plutus.app */;
 			productType = "com.apple.product-type.application";
@@ -330,6 +335,9 @@
 				Base,
 			);
 			mainGroup = B855658825B37B7E00DD534D;
+			packageReferences = (
+				B8F7828B25B39C0D0015B8DF /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+			);
 			productRefGroup = B855659225B37B7E00DD534D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -702,6 +710,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B8F7828B25B39C0D0015B8DF /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/piknotech/SFSafeSymbols.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B8F7828C25B39C0D0015B8DF /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8F7828B25B39C0D0015B8DF /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B855659F25B37B7F00DD534D /* Plutus.xcdatamodeld */ = {
