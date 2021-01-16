@@ -10,7 +10,6 @@
 		B855659525B37B7E00DD534D /* PlutusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855659425B37B7E00DD534D /* PlutusApp.swift */; };
 		B855659725B37B7E00DD534D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855659625B37B7E00DD534D /* ContentView.swift */; };
 		B855659925B37B7F00DD534D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B855659825B37B7F00DD534D /* Assets.xcassets */; };
-		B855659C25B37B7F00DD534D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B855659B25B37B7F00DD534D /* Preview Assets.xcassets */; };
 		B855659E25B37B7F00DD534D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855659D25B37B7F00DD534D /* Persistence.swift */; };
 		B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B855659F25B37B7F00DD534D /* Plutus.xcdatamodeld */; };
 		B85565AC25B37B7F00DD534D /* PlutusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565AB25B37B7F00DD534D /* PlutusTests.swift */; };
@@ -21,6 +20,7 @@
 		C68F98E925B38B0600CC2950 /* Quicksand-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E425B38B0600CC2950 /* Quicksand-SemiBold.ttf */; };
 		C68F98EA25B38B0600CC2950 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E525B38B0600CC2950 /* Quicksand-Bold.ttf */; };
 		C68F98F025B38B2E00CC2950 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F98EF25B38B2E00CC2950 /* constants.swift */; };
+		C68F98F925B38E5300CC2950 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F98F825B38E5300CC2950 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +45,6 @@
 		B855659425B37B7E00DD534D /* PlutusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlutusApp.swift; sourceTree = "<group>"; };
 		B855659625B37B7E00DD534D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B855659825B37B7F00DD534D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B855659B25B37B7F00DD534D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B855659D25B37B7F00DD534D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B85565A025B37B7F00DD534D /* Plutus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plutus.xcdatamodel; sourceTree = "<group>"; };
 		B85565A225B37B7F00DD534D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		C68F98E425B38B0600CC2950 /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-SemiBold.ttf"; sourceTree = "<group>"; };
 		C68F98E525B38B0600CC2950 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		C68F98EF25B38B2E00CC2950 /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		C68F98F825B38E5300CC2950 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,22 +113,19 @@
 			children = (
 				C68F98E025B38AEA00CC2950 /* Assets */,
 				C68F98DF25B3887200CC2950 /* Data */,
+				C68F98F725B38E4900CC2950 /* Managers */,
+				C68F990925B38EFD00CC2950 /* Models */,
+				C68F98FD25B38E5700CC2950 /* Screens */,
+				C68F991125B38F8300CC2950 /* Stores */,
 				C68F98EE25B38B1400CC2950 /* Utilities */,
-				B855659425B37B7E00DD534D /* PlutusApp.swift */,
-				B855659625B37B7E00DD534D /* ContentView.swift */,
+				C68F990725B38EEF00CC2950 /* View Modifiers */,
+				C68F98FE25B38E5E00CC2950 /* Views */,
 				B855659825B37B7F00DD534D /* Assets.xcassets */,
+				B855659625B37B7E00DD534D /* ContentView.swift */,
 				B85565A225B37B7F00DD534D /* Info.plist */,
-				B855659A25B37B7F00DD534D /* Preview Content */,
+				B855659425B37B7E00DD534D /* PlutusApp.swift */,
 			);
 			path = Plutus;
-			sourceTree = "<group>";
-		};
-		B855659A25B37B7F00DD534D /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				B855659B25B37B7F00DD534D /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		B85565AA25B37B7F00DD534D /* PlutusTests */ = {
@@ -173,9 +170,68 @@
 		C68F98EE25B38B1400CC2950 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C68F990825B38EF700CC2950 /* Extensions */,
+				C68F990A25B38F0300CC2950 /* Protocols */,
 				C68F98EF25B38B2E00CC2950 /* constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C68F98F725B38E4900CC2950 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C68F98F825B38E5300CC2950 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C68F98FD25B38E5700CC2950 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		C68F98FE25B38E5E00CC2950 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C68F990725B38EEF00CC2950 /* View Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Modifiers";
+			sourceTree = "<group>";
+		};
+		C68F990825B38EF700CC2950 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C68F990925B38EFD00CC2950 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C68F990A25B38F0300CC2950 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C68F991125B38F8300CC2950 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stores;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +340,6 @@
 				C68F98EA25B38B0600CC2950 /* Quicksand-Bold.ttf in Resources */,
 				C68F98E625B38B0600CC2950 /* Quicksand-Light.ttf in Resources */,
 				C68F98E725B38B0600CC2950 /* Quicksand-Medium.ttf in Resources */,
-				B855659C25B37B7F00DD534D /* Preview Assets.xcassets in Resources */,
 				C68F98E925B38B0600CC2950 /* Quicksand-SemiBold.ttf in Resources */,
 				B855659925B37B7F00DD534D /* Assets.xcassets in Resources */,
 				C68F98E825B38B0600CC2950 /* Quicksand-Regular.ttf in Resources */,
@@ -312,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68F98F925B38E5300CC2950 /* NetworkManager.swift in Sources */,
 				B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */,
 				B855659E25B37B7F00DD534D /* Persistence.swift in Sources */,
 				B855659725B37B7E00DD534D /* ContentView.swift in Sources */,
@@ -474,7 +530,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Plutus/Preview Content\"";
 				DEVELOPMENT_TEAM = HK5GWCA3TA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Plutus/Info.plist;
@@ -496,7 +551,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Plutus/Preview Content\"";
 				DEVELOPMENT_TEAM = HK5GWCA3TA;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Plutus/Info.plist;
