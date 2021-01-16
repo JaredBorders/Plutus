@@ -15,6 +15,12 @@
 		B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B855659F25B37B7F00DD534D /* Plutus.xcdatamodeld */; };
 		B85565AC25B37B7F00DD534D /* PlutusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565AB25B37B7F00DD534D /* PlutusTests.swift */; };
 		B85565B725B37B7F00DD534D /* PlutusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565B625B37B7F00DD534D /* PlutusUITests.swift */; };
+		C68F98E625B38B0600CC2950 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E125B38B0500CC2950 /* Quicksand-Light.ttf */; };
+		C68F98E725B38B0600CC2950 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E225B38B0600CC2950 /* Quicksand-Medium.ttf */; };
+		C68F98E825B38B0600CC2950 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E325B38B0600CC2950 /* Quicksand-Regular.ttf */; };
+		C68F98E925B38B0600CC2950 /* Quicksand-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E425B38B0600CC2950 /* Quicksand-SemiBold.ttf */; };
+		C68F98EA25B38B0600CC2950 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E525B38B0600CC2950 /* Quicksand-Bold.ttf */; };
+		C68F98F025B38B2E00CC2950 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F98EF25B38B2E00CC2950 /* constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		B85565B225B37B7F00DD534D /* PlutusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlutusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85565B625B37B7F00DD534D /* PlutusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlutusUITests.swift; sourceTree = "<group>"; };
 		B85565B825B37B7F00DD534D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C68F98E125B38B0500CC2950 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		C68F98E225B38B0600CC2950 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
+		C68F98E325B38B0600CC2950 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
+		C68F98E425B38B0600CC2950 /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-SemiBold.ttf"; sourceTree = "<group>"; };
+		C68F98E525B38B0600CC2950 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		C68F98EF25B38B2E00CC2950 /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +111,13 @@
 		B855659325B37B7E00DD534D /* Plutus */ = {
 			isa = PBXGroup;
 			children = (
+				C68F98E025B38AEA00CC2950 /* Assets */,
+				C68F98DF25B3887200CC2950 /* Data */,
+				C68F98EE25B38B1400CC2950 /* Utilities */,
 				B855659425B37B7E00DD534D /* PlutusApp.swift */,
 				B855659625B37B7E00DD534D /* ContentView.swift */,
 				B855659825B37B7F00DD534D /* Assets.xcassets */,
-				B855659D25B37B7F00DD534D /* Persistence.swift */,
 				B85565A225B37B7F00DD534D /* Info.plist */,
-				B855659F25B37B7F00DD534D /* Plutus.xcdatamodeld */,
 				B855659A25B37B7F00DD534D /* Preview Content */,
 			);
 			path = Plutus;
@@ -134,6 +147,35 @@
 				B85565B825B37B7F00DD534D /* Info.plist */,
 			);
 			path = PlutusUITests;
+			sourceTree = "<group>";
+		};
+		C68F98DF25B3887200CC2950 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B855659D25B37B7F00DD534D /* Persistence.swift */,
+				B855659F25B37B7F00DD534D /* Plutus.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C68F98E025B38AEA00CC2950 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C68F98E525B38B0600CC2950 /* Quicksand-Bold.ttf */,
+				C68F98E125B38B0500CC2950 /* Quicksand-Light.ttf */,
+				C68F98E225B38B0600CC2950 /* Quicksand-Medium.ttf */,
+				C68F98E325B38B0600CC2950 /* Quicksand-Regular.ttf */,
+				C68F98E425B38B0600CC2950 /* Quicksand-SemiBold.ttf */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		C68F98EE25B38B1400CC2950 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C68F98EF25B38B2E00CC2950 /* constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,8 +281,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68F98EA25B38B0600CC2950 /* Quicksand-Bold.ttf in Resources */,
+				C68F98E625B38B0600CC2950 /* Quicksand-Light.ttf in Resources */,
+				C68F98E725B38B0600CC2950 /* Quicksand-Medium.ttf in Resources */,
 				B855659C25B37B7F00DD534D /* Preview Assets.xcassets in Resources */,
+				C68F98E925B38B0600CC2950 /* Quicksand-SemiBold.ttf in Resources */,
 				B855659925B37B7F00DD534D /* Assets.xcassets in Resources */,
+				C68F98E825B38B0600CC2950 /* Quicksand-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +315,7 @@
 				B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */,
 				B855659E25B37B7F00DD534D /* Persistence.swift in Sources */,
 				B855659725B37B7E00DD534D /* ContentView.swift in Sources */,
+				C68F98F025B38B2E00CC2950 /* constants.swift in Sources */,
 				B855659525B37B7E00DD534D /* PlutusApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
