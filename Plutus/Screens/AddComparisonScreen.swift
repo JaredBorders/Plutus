@@ -18,12 +18,16 @@ struct AddComparisonScreen: View {
         VStack(spacing: 0) {
             DateRangePickerView()
             Divider()
-            Text("📈 Elena's Graph") // GraphView will eventually go here @elena
-                .padding(100)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.gray, lineWidth: 1)
-                )
+            if !newComparison.stockTicker.isEmpty && !newComparison.cryptoTicker.isEmpty {
+                StaticChart()
+            } else {
+                Text("N/a") // GraphView will eventually go here @elena
+                    .padding(100)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
+            }
             HStack {
                 NavigationLink(
                     destination: CryptoListView(newComparison: $newComparison, newTickerSelection: $newTickerSelection),

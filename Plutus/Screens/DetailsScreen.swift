@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailsScreen: View {
     @State private var dictOfComparisons = [ComparisonDetails(cryptoTicker: "BTC", stockTicker: "DOW")]
+    @ObservedObject var store = ChartStore()
 
     // No state varibales yet. This all just uses moch data
     var watchListItem: AnalysisModel
@@ -79,6 +80,7 @@ struct DetailsScreen: View {
             }
         }
         .navigationBarTitle("Add Comparisons", displayMode: .inline)
+        
     }
 }
 
