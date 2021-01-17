@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B843104125B391CD005544E5 /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B843104025B391CD005544E5 /* DetailsScreen.swift */; };
 		B855659525B37B7E00DD534D /* PlutusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855659425B37B7E00DD534D /* PlutusApp.swift */; };
 		B855659725B37B7E00DD534D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855659625B37B7E00DD534D /* ContentView.swift */; };
 		B855659925B37B7F00DD534D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B855659825B37B7F00DD534D /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 		B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B855659F25B37B7F00DD534D /* Plutus.xcdatamodeld */; };
 		B85565AC25B37B7F00DD534D /* PlutusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565AB25B37B7F00DD534D /* PlutusTests.swift */; };
 		B85565B725B37B7F00DD534D /* PlutusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565B625B37B7F00DD534D /* PlutusUITests.swift */; };
+		B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7826F25B394200015B8DF /* DateRangePickerView.swift */; };
+		B8F7827825B3942F0015B8DF /* ComparsionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */; };
+		B8F7828D25B39C0D0015B8DF /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = B8F7828C25B39C0D0015B8DF /* SFSafeSymbols */; };
 		C68F98E625B38B0600CC2950 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E125B38B0500CC2950 /* Quicksand-Light.ttf */; };
 		C68F98E725B38B0600CC2950 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E225B38B0600CC2950 /* Quicksand-Medium.ttf */; };
 		C68F98E825B38B0600CC2950 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E325B38B0600CC2950 /* Quicksand-Regular.ttf */; };
@@ -41,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B843104025B391CD005544E5 /* DetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
 		B855659125B37B7E00DD534D /* Plutus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plutus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B855659425B37B7E00DD534D /* PlutusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlutusApp.swift; sourceTree = "<group>"; };
 		B855659625B37B7E00DD534D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +59,8 @@
 		B85565B225B37B7F00DD534D /* PlutusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlutusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85565B625B37B7F00DD534D /* PlutusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlutusUITests.swift; sourceTree = "<group>"; };
 		B85565B825B37B7F00DD534D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8F7826F25B394200015B8DF /* DateRangePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerView.swift; sourceTree = "<group>"; };
+		B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparsionCardView.swift; sourceTree = "<group>"; };
 		C68F98E125B38B0500CC2950 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
 		C68F98E225B38B0600CC2950 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
 		C68F98E325B38B0600CC2950 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F7828D25B39C0D0015B8DF /* SFSafeSymbols in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +196,7 @@
 		C68F98FD25B38E5700CC2950 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B843104025B391CD005544E5 /* DetailsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -195,6 +204,8 @@
 		C68F98FE25B38E5E00CC2950 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B8F7826F25B394200015B8DF /* DateRangePickerView.swift */,
+				B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +261,9 @@
 			dependencies = (
 			);
 			name = Plutus;
+			packageProductDependencies = (
+				B8F7828C25B39C0D0015B8DF /* SFSafeSymbols */,
+			);
 			productName = Plutus;
 			productReference = B855659125B37B7E00DD534D /* Plutus.app */;
 			productType = "com.apple.product-type.application";
@@ -321,6 +335,9 @@
 				Base,
 			);
 			mainGroup = B855658825B37B7E00DD534D;
+			packageReferences = (
+				B8F7828B25B39C0D0015B8DF /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+			);
 			productRefGroup = B855659225B37B7E00DD534D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -367,8 +384,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */,
 				C68F98F925B38E5300CC2950 /* NetworkManager.swift in Sources */,
 				B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */,
+				B843104125B391CD005544E5 /* DetailsScreen.swift in Sources */,
+				B8F7827825B3942F0015B8DF /* ComparsionCardView.swift in Sources */,
 				B855659E25B37B7F00DD534D /* Persistence.swift in Sources */,
 				B855659725B37B7E00DD534D /* ContentView.swift in Sources */,
 				C68F98F025B38B2E00CC2950 /* constants.swift in Sources */,
@@ -690,6 +710,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B8F7828B25B39C0D0015B8DF /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/piknotech/SFSafeSymbols.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B8F7828C25B39C0D0015B8DF /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8F7828B25B39C0D0015B8DF /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B855659F25B37B7F00DD534D /* Plutus.xcdatamodeld */ = {
