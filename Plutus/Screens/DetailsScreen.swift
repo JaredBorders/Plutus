@@ -11,12 +11,13 @@ struct DetailsScreen: View {
     // No state varibales yet. This all just uses moch data
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             DateRangePickerView()
             Divider()
-            WatchListCard()
-            Divider()
             ScrollView { // eventually this will be a ForEach
+                WatchListCard()
+                    .padding(.top)
+                Divider()
                 ComparsionCardView(name: "BTC",
                                    currentValue: 44000,
                                    percentChange: 10,
@@ -51,7 +52,7 @@ struct DetailsScreen: View {
                     .padding(.horizontal)
             }
         }
-        .navigationTitle("Add Comparisons")
+        .navigationBarTitle("Add Comparisons", displayMode: .inline)
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }

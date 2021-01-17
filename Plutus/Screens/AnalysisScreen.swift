@@ -9,11 +9,20 @@ import SwiftUI
 
 struct AnalysisScreen: View {
     @State private var isShowingDetailsScreen = false
-    
+
+    init() {
+        UINavigationBar.appearance().tintColor = UIColor.label
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont(name: Fonts.quicksandBold, size: 20)!
+        ]
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            NSAttributedString.Key.font: UIFont(name: Fonts.quicksandBold, size: 40)!
+        ]
+    }
+
     var body: some View {
         NavigationView {
-            VStack {
-                NavigationLink(destination: DetailsScreen(), isActive: $isShowingDetailsScreen) {}
+            ScrollView {
                 HStack {
                     Text("My Watch List")
                         .font(.custom(Fonts.quicksandSemiBold, size: 18))
@@ -34,21 +43,24 @@ struct AnalysisScreen: View {
                         .padding(.top, 8)
                         .padding(.horizontal)
                 }
-                
+
             }
             .navigationBarTitle("Plutus", displayMode: .automatic)
-            .navigationBarItems(trailing: Button {
-                self.isShowingDetailsScreen = true
-            } label: {
-                Image(systemSymbol: .plus)
-                    .foregroundColor(.black)
-            })
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: DetailsScreen()) {
+                        Image(systemSymbol: .plus)
+                    }
+                }
+            }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
 struct AnalysisScreen_Previews: PreviewProvider {
     static var previews: some View {
         AnalysisScreen()
+
     }
 }
