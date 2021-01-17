@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00D9670E25B4AF4B00CEB626 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 00D9670D25B4AF4B00CEB626 /* SwiftUICharts */; };
+		00D9671325B4AF9000CEB626 /* ChartStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9671225B4AF9000CEB626 /* ChartStore.swift */; };
+		00D9671825B4AF9800CEB626 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9671725B4AF9800CEB626 /* ChartView.swift */; };
+		00D9671E25B4C3C000CEB626 /* StaticChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9671D25B4C3C000CEB626 /* StaticChart.swift */; };
+		00D9672725B4C43300CEB626 /* StaticChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D9672625B4C43300CEB626 /* StaticChartData.swift */; };
 		4DD67D0325B3CF3C0043EABC /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = B8F7828C25B39C0D0015B8DF /* SFSafeSymbols */; };
 		4DD67D1425B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67D1025B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift */; };
 		4DD67D1525B3CFBD0043EABC /* SearchStockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67D1125B3CFBD0043EABC /* SearchStockModel.swift */; };
@@ -32,15 +37,10 @@
 		B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B855659F25B37B7F00DD534D /* Plutus.xcdatamodeld */; };
 		B85565AC25B37B7F00DD534D /* PlutusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565AB25B37B7F00DD534D /* PlutusTests.swift */; };
 		B85565B725B37B7F00DD534D /* PlutusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565B625B37B7F00DD534D /* PlutusUITests.swift */; };
-
-		B875496425B3CA6A00D646F2 /* AnalysisScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875496325B3CA6A00D646F2 /* AnalysisScreen.swift */; };
-		B875496C25B3CBC000D646F2 /* WatchListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875496B25B3CBC000D646F2 /* WatchListCard.swift */; };
-		B875497125B3D01500D646F2 /* TickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875497025B3D01500D646F2 /* TickerView.swift */; };
 		B890586025B43570005BB235 /* ComparisonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890585F25B43570005BB235 /* ComparisonDetails.swift */; };
 		B890587125B43A04005BB235 /* AddComparisonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890587025B43A04005BB235 /* AddComparisonScreen.swift */; };
 		B890587625B44299005BB235 /* CryptoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890587525B44299005BB235 /* CryptoListView.swift */; };
 		B890587B25B442A4005BB235 /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890587A25B442A4005BB235 /* StockListView.swift */; };
-
 		B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7826F25B394200015B8DF /* DateRangePickerView.swift */; };
 		B8F7827825B3942F0015B8DF /* ComparsionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */; };
 		C68F98E625B38B0600CC2950 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E125B38B0500CC2950 /* Quicksand-Light.ttf */; };
@@ -70,6 +70,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00D9671225B4AF9000CEB626 /* ChartStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartStore.swift; sourceTree = "<group>"; };
+		00D9671725B4AF9800CEB626 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		00D9671D25B4C3C000CEB626 /* StaticChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticChart.swift; sourceTree = "<group>"; };
+		00D9672625B4C43300CEB626 /* StaticChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticChartData.swift; sourceTree = "<group>"; };
 		4DD67D1025B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyAdjustedStockModel.swift; sourceTree = "<group>"; };
 		4DD67D1125B3CFBD0043EABC /* SearchStockModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStockModel.swift; sourceTree = "<group>"; };
 		4DD67D1225B3CFBD0043EABC /* DailyAdjustedStockModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyAdjustedStockModel.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D9670E25B4AF4B00CEB626 /* SwiftUICharts in Frameworks */,
 				4DD67D0325B3CF3C0043EABC /* SFSafeSymbols in Frameworks */,
 				4DD67D3C25B3D8550043EABC /* Alamofire in Frameworks */,
 			);
@@ -141,6 +146,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00D9671C25B4C38B00CEB626 /* Static Charts */ = {
+			isa = PBXGroup;
+			children = (
+				00D9671D25B4C3C000CEB626 /* StaticChart.swift */,
+			);
+			path = "Static Charts";
+			sourceTree = "<group>";
+		};
+		00D9672525B4C41200CEB626 /* Static Models */ = {
+			isa = PBXGroup;
+			children = (
+				00D9672625B4C43300CEB626 /* StaticChartData.swift */,
+			);
+			path = "Static Models";
+			sourceTree = "<group>";
+		};
 		B855658825B37B7E00DD534D = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +284,8 @@
 		C68F98FE25B38E5E00CC2950 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				00D9671C25B4C38B00CEB626 /* Static Charts */,
+				00D9671725B4AF9800CEB626 /* ChartView.swift */,
 				B8F7826F25B394200015B8DF /* DateRangePickerView.swift */,
 				B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */,
 				B875496B25B3CBC000D646F2 /* WatchListCard.swift */,
@@ -290,6 +313,7 @@
 		C68F990925B38EFD00CC2950 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				00D9672525B4C41200CEB626 /* Static Models */,
 				B890585B25B43539005BB235 /* Comparison */,
 				4DD67D1225B3CFBD0043EABC /* DailyAdjustedStockModel.swift */,
 				4DD67E1F25B4549A0043EABC /* AnalysisModel.swift */,
@@ -313,6 +337,7 @@
 		C68F991125B38F8300CC2950 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				00D9671225B4AF9000CEB626 /* ChartStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -336,6 +361,7 @@
 			packageProductDependencies = (
 				B8F7828C25B39C0D0015B8DF /* SFSafeSymbols */,
 				4DD67D3B25B3D8550043EABC /* Alamofire */,
+				00D9670D25B4AF4B00CEB626 /* SwiftUICharts */,
 			);
 			productName = Plutus;
 			productReference = B855659125B37B7E00DD534D /* Plutus.app */;
@@ -411,6 +437,7 @@
 			packageReferences = (
 				B8F7828B25B39C0D0015B8DF /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 				4DD67D3A25B3D8550043EABC /* XCRemoteSwiftPackageReference "Alamofire" */,
+				00D9670C25B4AF4B00CEB626 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = B855659225B37B7E00DD534D /* Products */;
 			projectDirPath = "";
@@ -462,7 +489,10 @@
 				4DD67E2025B4549A0043EABC /* AnalysisModel.swift in Sources */,
 				4DD67DB325B40E730043EABC /* DigitalCurrency.swift in Sources */,
 				B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */,
+				00D9672725B4C43300CEB626 /* StaticChartData.swift in Sources */,
+				00D9671E25B4C3C000CEB626 /* StaticChart.swift in Sources */,
 				C68F98F925B38E5300CC2950 /* NetworkManager.swift in Sources */,
+				00D9671325B4AF9000CEB626 /* ChartStore.swift in Sources */,
 				4DD67D8525B3E0350043EABC /* Endpoints.swift in Sources */,
 				B890587B25B442A4005BB235 /* StockListView.swift in Sources */,
 				B890586025B43570005BB235 /* ComparisonDetails.swift in Sources */,
@@ -480,6 +510,7 @@
 				4DD67D1725B3CFBD0043EABC /* WeeklyAdjustedStockModel.swift in Sources */,
 				B855659725B37B7E00DD534D /* ContentView.swift in Sources */,
 				4DD67DA625B40D640043EABC /* DailyAdjustedCryptoModel.swift in Sources */,
+				00D9671825B4AF9800CEB626 /* ChartView.swift in Sources */,
 				4DD67E2E25B457C50043EABC /* StockMarketIndexes.swift in Sources */,
 				C68F98F025B38B2E00CC2950 /* constants.swift in Sources */,
 				4DD67DD825B4494E0043EABC /* AnalysisScreen.swift in Sources */,
@@ -805,6 +836,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		00D9670C25B4AF4B00CEB626 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
 		4DD67D3A25B3D8550043EABC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -824,6 +863,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		00D9670D25B4AF4B00CEB626 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00D9670C25B4AF4B00CEB626 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
 		4DD67D3B25B3D8550043EABC /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4DD67D3A25B3D8550043EABC /* XCRemoteSwiftPackageReference "Alamofire" */;
