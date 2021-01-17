@@ -11,43 +11,48 @@ struct DetailsScreen: View {
     // No state varibales yet. This all just uses moch data
     
     var body: some View {
-        NavigationView {
-            VStack {
-                DateRangePickerView()
+        VStack(spacing: 0) {
+            DateRangePickerView()
+            Divider()
+            ScrollView { // eventually this will be a ForEach
+                WatchListCard()
+                    .padding(.top)
                 Divider()
-                Text("📈") // GraphView will eventually go here @elena
-                    .padding()
-                Divider()
-                ScrollView { // eventually this will be a ForEach
-                    ComparsionCardView(name: "BTC",
-                                       currentValue: 44000,
-                                       percentChange: 10,
-                                       valueChange: 4000,
-                                       dateRange: DateRanges.Day,
-                                       isSelected: true)
-                        .padding(.vertical, 6)
-                        .padding(.horizontal)
-                    ComparsionCardView(name: "ETH",
-                                       currentValue: 1400,
-                                       percentChange: -8.3,
-                                       valueChange: -113,
-                                       dateRange: DateRanges.Day,
-                                       isSelected: false)
-                        .padding(.vertical, 6)
-                        .padding(.horizontal)
-                    ComparsionCardView(name: "S&P 500",
-                                       currentValue: 3768.25,
-                                       percentChange: -0.72,
-                                       valueChange: 27.29,
-                                       dateRange: DateRanges.Day,
-                                       isSelected: false)
-                        .padding(.vertical, 6)
-                        .padding(.horizontal)
-                }
+                ComparsionCardView(name: "BTC",
+                                   currentValue: 44000,
+                                   percentChange: 10,
+                                   valueChange: 4000,
+                                   dateRange: DateRanges.Day,
+                                   isSelected: true)
+                    .padding(.vertical, 6)
+                    .padding(.horizontal)
+                ComparsionCardView(name: "DOW",
+                                   currentValue: 30814.26,
+                                   percentChange: -0.57,
+                                   valueChange: -177.26,
+                                   dateRange: DateRanges.Day,
+                                   isSelected: true)
+                    .padding(.vertical, 6)
+                    .padding(.horizontal)
+                ComparsionCardView(name: "ETH",
+                                   currentValue: 1400,
+                                   percentChange: -8.3,
+                                   valueChange: -113,
+                                   dateRange: DateRanges.Day,
+                                   isSelected: false)
+                    .padding(.vertical, 6)
+                    .padding(.horizontal)
+                ComparsionCardView(name: "S&P 500",
+                                   currentValue: 3768.25,
+                                   percentChange: -0.72,
+                                   valueChange: 27.29,
+                                   dateRange: DateRanges.Day,
+                                   isSelected: false)
+                    .padding(.vertical, 6)
+                    .padding(.horizontal)
             }
-            .navigationTitle("Add Comparisons")
-            .navigationViewStyle(StackNavigationViewStyle())
         }
+        .navigationBarTitle("Add Comparisons", displayMode: .inline)
     }
 }
 
