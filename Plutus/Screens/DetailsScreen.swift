@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct DetailsScreen: View {
-    // No state varibales yet. This all just uses moch data
+    @State private var dictOfComparisons = [ComparisonDetails(cryptoTicker: "BTC", stockTicker: "DOW")]
+    
     
     var body: some View {
         VStack(spacing: 0) {
             DateRangePickerView()
             Divider()
             ScrollView { // eventually this will be a ForEach
-                WatchListCard()
-                    .padding(.top)
+                WatchListCard(isEditable: false,
+                              edit: {},
+                              cryptoTicker: $dictOfComparisons[0].cryptoTicker,
+                              stockTicker: $dictOfComparisons[0].stockTicker)
+                    .padding([.top, .horizontal])
                 Divider()
                 ComparsionCardView(name: "BTC",
                                    currentValue: 44000,
@@ -32,22 +36,6 @@ struct DetailsScreen: View {
                                    valueChange: -177.26,
                                    dateRange: DateRanges.Day,
                                    isSelected: true)
-                    .padding(.vertical, 6)
-                    .padding(.horizontal)
-                ComparsionCardView(name: "ETH",
-                                   currentValue: 1400,
-                                   percentChange: -8.3,
-                                   valueChange: -113,
-                                   dateRange: DateRanges.Day,
-                                   isSelected: false)
-                    .padding(.vertical, 6)
-                    .padding(.horizontal)
-                ComparsionCardView(name: "S&P 500",
-                                   currentValue: 3768.25,
-                                   percentChange: -0.72,
-                                   valueChange: 27.29,
-                                   dateRange: DateRanges.Day,
-                                   isSelected: false)
                     .padding(.vertical, 6)
                     .padding(.horizontal)
             }

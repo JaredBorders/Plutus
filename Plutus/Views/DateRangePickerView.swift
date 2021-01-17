@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SFSafeSymbols
 
 struct DateRangePickerView: View {
     @State private var selectedDateRange = DateRanges.Day

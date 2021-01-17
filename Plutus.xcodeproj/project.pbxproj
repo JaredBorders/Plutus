@@ -24,6 +24,7 @@
 		B875496425B3CA6A00D646F2 /* AnalysisScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875496325B3CA6A00D646F2 /* AnalysisScreen.swift */; };
 		B875496C25B3CBC000D646F2 /* WatchListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875496B25B3CBC000D646F2 /* WatchListCard.swift */; };
 		B875497125B3D01500D646F2 /* TickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875497025B3D01500D646F2 /* TickerView.swift */; };
+		B890586025B43570005BB235 /* ComparisonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890585F25B43570005BB235 /* ComparisonDetails.swift */; };
 		B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7826F25B394200015B8DF /* DateRangePickerView.swift */; };
 		B8F7827825B3942F0015B8DF /* ComparsionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */; };
 		C62D464025B3EC3D009CD1DF /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62D463F25B3EC3D009CD1DF /* DetailsScreen.swift */; };
@@ -75,6 +76,7 @@
 		B875496325B3CA6A00D646F2 /* AnalysisScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisScreen.swift; sourceTree = "<group>"; };
 		B875496B25B3CBC000D646F2 /* WatchListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListCard.swift; sourceTree = "<group>"; };
 		B875497025B3D01500D646F2 /* TickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerView.swift; sourceTree = "<group>"; };
+		B890585F25B43570005BB235 /* ComparisonDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonDetails.swift; sourceTree = "<group>"; };
 		B8F7826F25B394200015B8DF /* DateRangePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerView.swift; sourceTree = "<group>"; };
 		B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparsionCardView.swift; sourceTree = "<group>"; };
 		C62D463F25B3EC3D009CD1DF /* DetailsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 			path = PlutusUITests;
 			sourceTree = "<group>";
 		};
+		B890585B25B43539005BB235 /* Comparison */ = {
+			isa = PBXGroup;
+			children = (
+				B890585F25B43570005BB235 /* ComparisonDetails.swift */,
+			);
+			path = Comparison;
+			sourceTree = "<group>";
+		};
 		C68F98DF25B3887200CC2950 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +259,7 @@
 		C68F990925B38EFD00CC2950 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B890585B25B43539005BB235 /* Comparison */,
 				4DD67D1225B3CFBD0043EABC /* DailyAdjustedStockModel.swift */,
 				4DD67D1325B3CFBD0043EABC /* WeeklyAdjustedStockModel.swift */,
 				4DD67D1025B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift */,
@@ -415,6 +426,7 @@
 				B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */,
 				C68F98F925B38E5300CC2950 /* NetworkManager.swift in Sources */,
 				4DD67D8525B3E0350043EABC /* Endpoints.swift in Sources */,
+				B890586025B43570005BB235 /* ComparisonDetails.swift in Sources */,
 				4DD67D1625B3CFBD0043EABC /* DailyAdjustedStockModel.swift in Sources */,
 				4DD67D1425B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift in Sources */,
 				B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */,
