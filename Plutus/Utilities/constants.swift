@@ -14,3 +14,12 @@ enum Fonts {
     static let quicksandSemiBold = "Quicksand-SemiBold"
     static let quicksandLight = "Quicksand-Light"
 }
+
+enum DateRanges: String, CaseIterable, Identifiable {
+    case Day
+    case Week
+    case Month
+    case Year
+    
+    var id: String { self.rawValue }
+}
