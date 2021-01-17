@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MonthlyAdjustedCrypto: Codable {
+struct MonthlyAdjustedCryptoModel: Codable {
     let metaData: MonthlyAdjustedCryptoMetaData
     let timeSeriesDigitalCurrencyMonthly: [String: TimeSeriesDigitalCurrencyMonthly]
 

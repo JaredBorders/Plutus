@@ -9,13 +9,14 @@ import SwiftUI
 
 struct DetailsScreen: View {
     // No state varibales yet. This all just uses moch data
+    var watclistItem: AnalysisModel
     
     var body: some View {
         VStack(spacing: 0) {
             DateRangePickerView()
             Divider()
             ScrollView { // eventually this will be a ForEach
-                WatchListCard()
+                WatchListCard(watchListItem: watclistItem)
                     .padding(.top)
                 Divider()
                 ComparsionCardView(name: "BTC",
@@ -58,6 +59,9 @@ struct DetailsScreen: View {
 
 struct DetailsScreen_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsScreen()
+        let watchList = WathclistModel(crypto: .BTC, stock: .AEX, cryptoValue: "38500", cryptoDifference: "+10.5", stockValue: "345000", stockDifference: "-0.5")
+        let analysisModel = AnalysisModel(timeRange: .Day, watchlist: watchList)
+
+        DetailsScreen(watclistItem: analysisModel)
     }
 }
