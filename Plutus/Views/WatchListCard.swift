@@ -8,6 +8,29 @@
 import SwiftUI
 
 struct WatchListCard: View {
+    
+    var watchListItem: AnalysisModel
+    
+    var cryptoDifferece: Float {
+        let value = watchListItem.watchlist.cryptoValue
+        let diff = watchListItem.watchlist.cryptoDifference
+        if let value = Float(value), let diff = Float(diff) {
+            return value * (diff / 100)
+        } else {
+            return 0.0
+        }
+    }
+    
+    var stockDifferece: Float {
+        let value = watchListItem.watchlist.stockValue
+        let diff = watchListItem.watchlist.stockDifference
+        if let value = Float(value), let diff = Float(diff) {
+            return value * (diff / 100)
+        } else {
+            return 0.0
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             VStack {
@@ -18,8 +41,8 @@ struct WatchListCard: View {
                             .stroke(Color.gray, lineWidth: 1)
                     )
                 HStack {
-                    TickerView(name: "BTC", currentValue: 40000, percentChange: 10, valueChange: 4000, dateRange: DateRanges.Day)
-                    TickerView(name: "DOW", currentValue: 30814.26, percentChange: -0.57, valueChange: -177.26, dateRange: DateRanges.Day)
+                    TickerView(name: watchListItem.watchlist.crypto.rawValue, currentValue: watchListItem.watchlist.cryptoValue, percentChange: watchListItem.watchlist.cryptoDifference, valueChange: "\(cryptoDifferece)", dateRange: watchListItem.timeRange)
+                    TickerView(name: watchListItem.watchlist.stock.rawValue, currentValue: watchListItem.watchlist.stockValue, percentChange: watchListItem.watchlist.stockDifference, valueChange: "\(stockDifferece)", dateRange: watchListItem.timeRange)
                 }
             }
             .padding()
@@ -33,6 +56,9 @@ struct WatchListCard: View {
 
 struct WatchListCard_Previews: PreviewProvider {
     static var previews: some View {
-        WatchListCard()
+        let data = WathclistModel(crypto: .BTC, stock: .AEX, cryptoValue: "38500", cryptoDifference: "+10.5", stockValue: "345000", stockDifference: "-0.5")
+        let analysisModel = AnalysisModel(timeRange: .Day, watchlist: data)
+
+        WatchListCard(watchListItem: analysisModel)
     }
 }

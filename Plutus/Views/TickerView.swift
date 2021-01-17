@@ -9,19 +9,43 @@ import SwiftUI
 
 struct TickerView: View {
     var name: String
-    var currentValue: Float
-    var percentChange: Float
-    var valueChange: Float
+    var currentValue: String
+    var percentChange: String
+    var valueChange: String
     var dateRange: DateRanges
     
     // Float -> String
-    private var currentValueStr: String { NSString(format: "%.2f", currentValue) as String }
-    private var percentChangeStr: String { NSString(format: "%.2f", abs(percentChange)) as String }
-    private var valueChangeStr: String { NSString(format: "%.2f", abs(valueChange)) as String }
+    private var currentValueStr: String {
+        if let cv = Float(currentValue) {
+            return NSString(format: "%.2f", cv) as String } else {
+                return currentValue
+            }
+    }
+    
+    private var percentChangeStr: String {
+        if let pc = Float(percentChange) {
+            return NSString(format: "%.2f", abs(pc)) as String }
+        else {
+            return percentChange
+        }
+    }
+    
+    private var valueChangeStr: String {
+        if let vc = Float(valueChange) {
+            return NSString(format: "%.2f", abs(vc)) as String }
+        else {
+            return valueChange
+        }
+    }
     
     var postiveChange: Bool {
-        percentChange > 0 ? true : false
+        if let pc = Float(percentChange) {
+            return pc > 0 ? true : false
+        } else {
+            return false
+        }
     }
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -42,6 +66,6 @@ struct TickerView: View {
 
 struct TickerView_Previews: PreviewProvider {
     static var previews: some View {
-        TickerView(name: "DOW", currentValue: 30814.26, percentChange: -0.57, valueChange: -177.26, dateRange: DateRanges.Day)
+        TickerView(name: "DOW", currentValue: "30814.26", percentChange: "-0.57", valueChange: "-177.26", dateRange: DateRanges.Day)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  DailyCrypto.swift
+//  WeeklyAdjustedCrypto.swift
 //  SampleApp
 //
 //  Created by Musa Kokcen on 17.01.2021.
@@ -7,19 +7,20 @@
 
 import Foundation
 
-// MARK: - Welcome
-struct DailyAdjustedCrypto: Codable {
-    let metaData: MetaData
-    let timeSeriesDigitalCurrencyDaily: [String: TimeSeriesDigitalCurrencyDaily]
 
+struct WeeklyAdjustedCryptoModel: Codable {
+    let metaData: WeeklyAdjustedMetaData
+    let timeSeriesDigitalCurrencyWeekly: [String: TimeSeriesDigitalCurrencyWeekly]
+    
     enum CodingKeys: String, CodingKey {
         case metaData = "Meta Data"
-        case timeSeriesDigitalCurrencyDaily = "Time Series (Digital Currency Daily)"
+        case timeSeriesDigitalCurrencyWeekly = "Time Series (Digital Currency Weekly)"
     }
 }
 
 // MARK: - MetaData
-struct MetaData: Codable {
+struct WeeklyAdjustedMetaData: Codable {
+    
     let information, digitalCurrencyCode, digitalCurrencyName, marketCode: String
     let marketName, lastRefreshed, timeZone: String
 
@@ -34,8 +35,8 @@ struct MetaData: Codable {
     }
 }
 
-// MARK: - TimeSeriesDigitalCurrencyDaily
-struct TimeSeriesDigitalCurrencyDaily: Codable {
+// MARK: - TimeSeriesDigitalCurrencyWeekly
+struct TimeSeriesDigitalCurrencyWeekly: Codable {
     let openCNY, openUSD, highCNY,highUSD: String?
     let lowCNY, lowUSD, closeCNY, closeUSD: String?
     let volume, marketCapUSD: String?
@@ -53,3 +54,4 @@ struct TimeSeriesDigitalCurrencyDaily: Codable {
         case marketCapUSD = "6. market cap (USD)"
     }
 }
+
