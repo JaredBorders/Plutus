@@ -20,7 +20,7 @@ struct DateRangePickerView: View {
             }
             Picker("Date Range", selection: $selectedDateRange) {
                 ForEach(DateRanges.allCases) { range in
-                    Text(range.rawValue)
+                    Text(range.rawValue).tag(range)
                 }
             }
         }
