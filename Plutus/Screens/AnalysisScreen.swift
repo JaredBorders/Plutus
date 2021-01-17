@@ -11,7 +11,7 @@ enum TimeRange {
     case daily, weekly, monthly, yearly
 }
 
-struct AnalysisModel: Identifiable {
+struct AnalysisModel: Identifiable, Decodable {
     var id: String {
         return UUID().uuidString
     }
@@ -36,7 +36,6 @@ struct WathclistModel: Codable, Identifiable {
 struct AnalysisScreen: View {
     @State private var isShowingDetailsScreen = false
     @EnvironmentObject var modelData: ModelData
-    private let favouriteComparisonsGroup = DispatchGroup()
 
     var analysisData: [AnalysisModel] = [
         AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .BTC, stock: .DJI, cryptoValue: "38555", cryptoDifference: "+12.65", stockValue: "30814.26", stockDifference: "-1.0")),
@@ -85,8 +84,6 @@ struct AnalysisScreen: View {
     private func updateData() {
         let comparisons = DefaultComparisons.comparison
         comparisons.forEach { (comparison) in
-            favouriteComparisonsGroup.enter()
-            
             
         }
     }

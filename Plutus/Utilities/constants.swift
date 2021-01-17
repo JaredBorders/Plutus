@@ -15,7 +15,7 @@ enum Fonts {
     static let quicksandLight = "Quicksand-Light"
 }
 
-enum DateRanges: String, CaseIterable, Identifiable {
+enum DateRanges: String, CaseIterable, Identifiable, Codable {
     case Day
     case Week
     case Month
