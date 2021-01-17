@@ -46,6 +46,7 @@ struct DetailsScreen: View {
                 }
             }
             .navigationTitle("Add Comparisons")
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
