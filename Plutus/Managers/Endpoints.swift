@@ -48,10 +48,11 @@ enum Endpoint {
                 "keywords": keyword,
                 "apikey": apiKey
             ]
-        case .dailyAdjustedCrypto(let symbol), .weeklyAdjustedCrypto(let symbol), .monthlyAdjustedCrypto(let symbol):
+        case .dailyAdjustedCrypto(let symbol, let market), .weeklyAdjustedCrypto(let symbol, let market), .monthlyAdjustedCrypto(let symbol, let market):
             return [
                 "function": function,
                 "symbol": symbol.rawValue,
+                "market": market,
                 "apikey": apiKey
             ]
         }
