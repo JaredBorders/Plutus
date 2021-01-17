@@ -23,3 +23,18 @@ enum DateRanges: String, CaseIterable, Identifiable {
     
     var id: String { self.rawValue }
 }
+
+struct DefaultComparisons {
+    static let comparison : [FavoriteComparison] = [
+        FavoriteComparison(crypto: .BTC, stock: .DJI, timeRange: .Day),
+        FavoriteComparison(crypto: .BTC, stock: .SPX, timeRange: .Day),
+        FavoriteComparison(crypto: .ETC, stock: .DJI, timeRange: .Day),
+        FavoriteComparison(crypto: .ETC, stock: .DJI, timeRange: .Day),
+        FavoriteComparison(crypto: .XRP, stock: .DJI, timeRange: .Day),
+        FavoriteComparison(crypto: .XRP, stock: .DJI, timeRange: .Day),
+        FavoriteComparison(crypto: .AION, stock: .DJI, timeRange: .Day),
+        FavoriteComparison(crypto: .AION, stock: .DJI, timeRange: .Day),
+        FavoriteComparison(crypto: .ZCC, stock: .DJI, timeRange: .Day),
+        FavoriteComparison(crypto: .ZCC, stock: .DJI, timeRange: .Day)
+    ]
+}

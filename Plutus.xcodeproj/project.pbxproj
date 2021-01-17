@@ -23,8 +23,9 @@
 		4DD67DDC25B4497C0043EABC /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62D463F25B3EC3D009CD1DF /* DetailsScreen.swift */; };
 		4DD67DE025B4498C0043EABC /* WatchListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875496B25B3CBC000D646F2 /* WatchListCard.swift */; };
 		4DD67DE425B4498F0043EABC /* TickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875497025B3D01500D646F2 /* TickerView.swift */; };
-		4DD67E2025B4549A0043EABC /* AnalysisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67E1F25B4549A0043EABC /* AnalysisModel.swift */; };
 		4DD67E2E25B457C50043EABC /* StockMarketIndexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67E2D25B457C50043EABC /* StockMarketIndexes.swift */; };
+		4DD67E3F25B470CD0043EABC /* EnvironmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67E3E25B470CD0043EABC /* EnvironmentModel.swift */; };
+		4DD67E4B25B4757D0043EABC /* FavoriteComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67E4A25B4757D0043EABC /* FavoriteComparison.swift */; };
 		B855659525B37B7E00DD534D /* PlutusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855659425B37B7E00DD534D /* PlutusApp.swift */; };
 		B855659725B37B7E00DD534D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855659625B37B7E00DD534D /* ContentView.swift */; };
 		B855659925B37B7F00DD534D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B855659825B37B7F00DD534D /* Assets.xcassets */; };
@@ -71,8 +72,9 @@
 		4DD67DA325B40D630043EABC /* DailyAdjustedCryptoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyAdjustedCryptoModel.swift; sourceTree = "<group>"; };
 		4DD67DB025B40E730043EABC /* PhysicalCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalCurrency.swift; sourceTree = "<group>"; };
 		4DD67DB125B40E730043EABC /* DigitalCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalCurrency.swift; sourceTree = "<group>"; };
-		4DD67E1F25B4549A0043EABC /* AnalysisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisModel.swift; sourceTree = "<group>"; };
 		4DD67E2D25B457C50043EABC /* StockMarketIndexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMarketIndexes.swift; sourceTree = "<group>"; };
+		4DD67E3E25B470CD0043EABC /* EnvironmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentModel.swift; sourceTree = "<group>"; };
+		4DD67E4A25B4757D0043EABC /* FavoriteComparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteComparison.swift; sourceTree = "<group>"; };
 		B855659125B37B7E00DD534D /* Plutus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plutus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B855659425B37B7E00DD534D /* PlutusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlutusApp.swift; sourceTree = "<group>"; };
 		B855659625B37B7E00DD534D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DD67E4325B475260043EABC /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+				4DD67D1225B3CFBD0043EABC /* DailyAdjustedStockModel.swift */,
+				4DD67D1325B3CFBD0043EABC /* WeeklyAdjustedStockModel.swift */,
+				4DD67D1025B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift */,
+				4DD67D1125B3CFBD0043EABC /* SearchStockModel.swift */,
+				4DD67DA325B40D630043EABC /* DailyAdjustedCryptoModel.swift */,
+				4DD67DA125B40D630043EABC /* MonthlyAdjustedCryptoModel.swift */,
+				4DD67DA225B40D630043EABC /* WeeklyAdjustedCryptoModel.swift */,
+				4DD67E4A25B4757D0043EABC /* FavoriteComparison.swift */,
+			);
+			path = APIModels;
+			sourceTree = "<group>";
+		};
 		B855658825B37B7E00DD534D = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				B855659D25B37B7F00DD534D /* Persistence.swift */,
+				4DD67E3E25B470CD0043EABC /* EnvironmentModel.swift */,
 				B855659F25B37B7F00DD534D /* Plutus.xcdatamodeld */,
 			);
 			path = Data;
@@ -266,14 +284,7 @@
 		C68F990925B38EFD00CC2950 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4DD67D1225B3CFBD0043EABC /* DailyAdjustedStockModel.swift */,
-				4DD67E1F25B4549A0043EABC /* AnalysisModel.swift */,
-				4DD67D1325B3CFBD0043EABC /* WeeklyAdjustedStockModel.swift */,
-				4DD67D1025B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift */,
-				4DD67D1125B3CFBD0043EABC /* SearchStockModel.swift */,
-				4DD67DA325B40D630043EABC /* DailyAdjustedCryptoModel.swift */,
-				4DD67DA125B40D630043EABC /* MonthlyAdjustedCryptoModel.swift */,
-				4DD67DA225B40D630043EABC /* WeeklyAdjustedCryptoModel.swift */,
+				4DD67E4325B475260043EABC /* APIModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -434,7 +445,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DD67DA425B40D640043EABC /* MonthlyAdjustedCryptoModel.swift in Sources */,
-				4DD67E2025B4549A0043EABC /* AnalysisModel.swift in Sources */,
 				4DD67DB325B40E730043EABC /* DigitalCurrency.swift in Sources */,
 				B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */,
 				C68F98F925B38E5300CC2950 /* NetworkManager.swift in Sources */,
@@ -450,6 +460,7 @@
 				4DD67DB225B40E730043EABC /* PhysicalCurrency.swift in Sources */,
 				4DD67DDC25B4497C0043EABC /* DetailsScreen.swift in Sources */,
 				4DD67D1725B3CFBD0043EABC /* WeeklyAdjustedStockModel.swift in Sources */,
+				4DD67E4B25B4757D0043EABC /* FavoriteComparison.swift in Sources */,
 				B855659725B37B7E00DD534D /* ContentView.swift in Sources */,
 				4DD67DA625B40D640043EABC /* DailyAdjustedCryptoModel.swift in Sources */,
 				4DD67E2E25B457C50043EABC /* StockMarketIndexes.swift in Sources */,
@@ -457,6 +468,7 @@
 				4DD67DD825B4494E0043EABC /* AnalysisScreen.swift in Sources */,
 				4DD67D1525B3CFBD0043EABC /* SearchStockModel.swift in Sources */,
 				B855659525B37B7E00DD534D /* PlutusApp.swift in Sources */,
+				4DD67E3F25B470CD0043EABC /* EnvironmentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
