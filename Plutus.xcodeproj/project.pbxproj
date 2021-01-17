@@ -32,15 +32,10 @@
 		B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B855659F25B37B7F00DD534D /* Plutus.xcdatamodeld */; };
 		B85565AC25B37B7F00DD534D /* PlutusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565AB25B37B7F00DD534D /* PlutusTests.swift */; };
 		B85565B725B37B7F00DD534D /* PlutusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565B625B37B7F00DD534D /* PlutusUITests.swift */; };
-
-		B875496425B3CA6A00D646F2 /* AnalysisScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875496325B3CA6A00D646F2 /* AnalysisScreen.swift */; };
-		B875496C25B3CBC000D646F2 /* WatchListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875496B25B3CBC000D646F2 /* WatchListCard.swift */; };
-		B875497125B3D01500D646F2 /* TickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875497025B3D01500D646F2 /* TickerView.swift */; };
 		B890586025B43570005BB235 /* ComparisonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890585F25B43570005BB235 /* ComparisonDetails.swift */; };
 		B890587125B43A04005BB235 /* AddComparisonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890587025B43A04005BB235 /* AddComparisonScreen.swift */; };
 		B890587625B44299005BB235 /* CryptoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890587525B44299005BB235 /* CryptoListView.swift */; };
 		B890587B25B442A4005BB235 /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890587A25B442A4005BB235 /* StockListView.swift */; };
-
 		B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7826F25B394200015B8DF /* DateRangePickerView.swift */; };
 		B8F7827825B3942F0015B8DF /* ComparsionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */; };
 		C68F98E625B38B0600CC2950 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E125B38B0500CC2950 /* Quicksand-Light.ttf */; };
@@ -292,13 +287,13 @@
 			children = (
 				B890585B25B43539005BB235 /* Comparison */,
 				4DD67D1225B3CFBD0043EABC /* DailyAdjustedStockModel.swift */,
-				4DD67E1F25B4549A0043EABC /* AnalysisModel.swift */,
 				4DD67D1325B3CFBD0043EABC /* WeeklyAdjustedStockModel.swift */,
 				4DD67D1025B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift */,
-				4DD67D1125B3CFBD0043EABC /* SearchStockModel.swift */,
 				4DD67DA325B40D630043EABC /* DailyAdjustedCryptoModel.swift */,
-				4DD67DA125B40D630043EABC /* MonthlyAdjustedCryptoModel.swift */,
 				4DD67DA225B40D630043EABC /* WeeklyAdjustedCryptoModel.swift */,
+				4DD67DA125B40D630043EABC /* MonthlyAdjustedCryptoModel.swift */,
+				4DD67D1125B3CFBD0043EABC /* SearchStockModel.swift */,
+				4DD67E1F25B4549A0043EABC /* AnalysisModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
