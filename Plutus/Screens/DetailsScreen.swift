@@ -53,7 +53,6 @@ struct DetailsScreen: View {
             }
         }
         .navigationBarTitle("Add Comparisons", displayMode: .inline)
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
