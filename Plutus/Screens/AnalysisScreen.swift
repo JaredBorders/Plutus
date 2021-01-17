@@ -34,6 +34,7 @@ struct WathclistModel: Codable, Identifiable {
 struct AnalysisScreen: View {
     @State private var isShowingDetailsScreen = false
     @State private var listOfComparisons = [ComparisonDetails(cryptoTicker: "BTC", stockTicker: "DOW")]
+    @ObservedObject var store = ChartStore()
 
     var analysisData: [AnalysisModel] = [
         AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .BTC, stock: .DJI, cryptoValue: "38555", cryptoDifference: "+12.65", stockValue: "30814.26", stockDifference: "-1.0")),
@@ -57,7 +58,6 @@ struct AnalysisScreen: View {
     
     var body: some View {
         NavigationView {
-            
             ScrollView {
                 LazyVStack {
                     HStack {
@@ -87,7 +87,7 @@ struct AnalysisScreen: View {
     }
     
     private func updateData() {
-        
+        store.fetchDaily()
     }
 }
 
