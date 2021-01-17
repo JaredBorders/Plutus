@@ -9,7 +9,7 @@ import Foundation
 
 enum Endpoint {
     case dailyAdjustedStock(symbol: String), weeklyAdjustedStock(symbol: String), monthlyAdjustedStock(symbol: String), searchStock(keyword: String)
-    case dailyAdjustedCrypto(symbol: String), weeklyAdjustedCrypto(symbol: String), monthlyAdjustedCrypto(symbol: String)
+    case dailyAdjustedCrypto(symbol: DigitalCurrency, market: PhysicalCurrency = .USD), weeklyAdjustedCrypto(symbol: DigitalCurrency, market: PhysicalCurrency = .USD), monthlyAdjustedCrypto(symbol: DigitalCurrency, market: PhysicalCurrency = .USD)
 
     var function: String {
         switch self {
@@ -51,7 +51,7 @@ enum Endpoint {
         case .dailyAdjustedCrypto(let symbol), .weeklyAdjustedCrypto(let symbol), .monthlyAdjustedCrypto(let symbol):
             return [
                 "function": function,
-                "symbol": symbol,
+                "symbol": symbol.rawValue,
                 "apikey": apiKey
             ]
         }
