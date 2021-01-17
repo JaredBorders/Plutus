@@ -75,10 +75,9 @@ struct AddComparisonScreen: View {
                 Button {
                     if newComparison.cryptoTicker != "" && newComparison.stockTicker != "" {
                         listOfComparisons.append(newComparison)
-                    } else {
-                        newComparison = ComparisonDetails()
                     }
-                    self.isShowingDetailsScreen = false // Is this necessary? I am so tired idc to check..
+                    self.newComparison.cryptoTicker = ""
+                    self.newComparison.stockTicker = ""
                     self.presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("Done")
