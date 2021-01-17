@@ -26,7 +26,7 @@ enum DateRanges: String, CaseIterable, Identifiable, Codable {
 
 struct DefaultComparisons {
     static let comparison : [FavoriteComparison] = [
-        FavoriteComparison(crypto: .BTC, stock: .DJI, timeRange: .Day),
+        FavoriteComparison(crypto: .BTC, stock: .IBM, timeRange: .Day),
         FavoriteComparison(crypto: .BTC, stock: .SPX, timeRange: .Day),
         FavoriteComparison(crypto: .ETC, stock: .DJI, timeRange: .Day),
         FavoriteComparison(crypto: .ETC, stock: .DJI, timeRange: .Day),

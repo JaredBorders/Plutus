@@ -11,13 +11,10 @@ enum TimeRange {
     case daily, weekly, monthly, yearly
 }
 
-struct AnalysisModel: Identifiable, Decodable {
-    var id: String {
-        return UUID().uuidString
-    }
-    
+struct AnalysisModel: Decodable {
     var timeRange: DateRanges
     var watchlist: WathclistModel
+
 }
 
 struct WathclistModel: Codable, Identifiable {
@@ -62,13 +59,13 @@ struct AnalysisScreen: View {
                             .padding([.top, .leading])
                         Spacer()
                 }
-                List(analysisData) { watchListItem in
+                List(modelData.data, id: \.watchlist.id) { watchListItem in
                     WatchListCard(watchListItem: watchListItem)
                 }
                 .navigationBarTitle("Plutus", displayMode: .automatic)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: DetailsScreen(watclistItem: analysisData[0])) {
+                        NavigationLink(destination: DetailsScreen(watclistItem: AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .BTC, stock: .DJI, cryptoValue: "38555", cryptoDifference: "+12.65", stockValue: "30814.26", stockDifference: "-1.0")))) {
                             Image(systemSymbol: .plus)
                         }
                     }
@@ -77,14 +74,22 @@ struct AnalysisScreen: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: {
-            updateData()
+//            DispatchQueue.main.async {
+                updateData()
+//            }
+            
         })
     }
     
     private func updateData() {
         let comparisons = DefaultComparisons.comparison
-        comparisons.forEach { (comparison) in
-            
+        NetworkManager.shared.requestComparison(comparison: comparisons.first!) { (result) in
+            switch result {
+            case .success(let data):
+                modelData.data.append(data)
+            case .failure(let err):
+                print(err)
+            }
         }
     }
 }
