@@ -27,7 +27,7 @@ struct ComparsionCardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             (isSelected ? Image(systemSymbol: .pinFill) : Image(systemSymbol: .pin))
-                .padding(.leading).padding(.top).padding(.bottom, -25)
+                .padding([.top, .leading]).padding(.bottom, -25)
             HStack {
                 VStack(alignment: .leading) {
                     HStack {
@@ -59,8 +59,6 @@ struct ComparsionCardView: View {
             RoundedRectangle(cornerRadius: 16)
                 .stroke(Color.gray, lineWidth: 1)
         )
-        .padding(.vertical, 6)
-        .padding(.horizontal)
     }
 }
 

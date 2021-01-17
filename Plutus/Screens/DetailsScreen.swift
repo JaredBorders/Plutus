@@ -18,26 +18,31 @@ struct DetailsScreen: View {
                 Text("📈") // GraphView will eventually go here @elena
                     .padding()
                 Divider()
-                ScrollView {
+                ScrollView { // eventually this will be a ForEach
                     ComparsionCardView(name: "BTC",
                                        currentValue: 44000,
                                        percentChange: 10,
                                        valueChange: 4000,
                                        dateRange: DateRanges.Day,
                                        isSelected: true)
+                        .padding(.vertical, 6)
+                        .padding(.horizontal)
                     ComparsionCardView(name: "ETH",
                                        currentValue: 1400,
                                        percentChange: -8.3,
                                        valueChange: -113,
                                        dateRange: DateRanges.Day,
                                        isSelected: false)
+                        .padding(.vertical, 6)
+                        .padding(.horizontal)
                     ComparsionCardView(name: "S&P 500",
                                        currentValue: 3768.25,
                                        percentChange: -0.72,
                                        valueChange: 27.29,
                                        dateRange: DateRanges.Day,
                                        isSelected: false)
-                    Spacer()
+                        .padding(.vertical, 6)
+                        .padding(.horizontal)
                 }
             }
             .navigationTitle("Add Comparisons")
@@ -45,7 +50,7 @@ struct DetailsScreen: View {
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
+struct DetailsScreen_Previews: PreviewProvider {
     static var previews: some View {
         DetailsScreen()
     }
