@@ -58,7 +58,6 @@ struct AnalysisScreen: View {
     
     var body: some View {
         NavigationView {
-            
             ScrollView {
                 LazyVStack {
                     HStack {
