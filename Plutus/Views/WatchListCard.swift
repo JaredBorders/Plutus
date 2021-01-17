@@ -12,8 +12,8 @@ struct WatchListCard: View, Identifiable {
     var isEditable: Bool // Component used in DetailsScreen. Should not be able to edit there.
     var edit: (() -> ())
     
-    @Binding var cryptoTicker: String
-    @Binding var stockTicker: String
+    var cryptoTicker: String
+    var stockTicker: String
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -53,6 +53,6 @@ struct WatchListCard: View, Identifiable {
 
 struct WatchListCard_Previews: PreviewProvider {
     static var previews: some View {
-        WatchListCard(isEditable: true, edit: {}, cryptoTicker: .constant("BTC"), stockTicker: .constant("DOW"))
+        WatchListCard(isEditable: true, edit: {}, cryptoTicker: "BTC", stockTicker: "DOW")
     }
 }

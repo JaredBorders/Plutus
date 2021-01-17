@@ -10,7 +10,6 @@ import SwiftUI
 struct DetailsScreen: View {
     @State private var dictOfComparisons = [ComparisonDetails(cryptoTicker: "BTC", stockTicker: "DOW")]
     
-    
     var body: some View {
         VStack(spacing: 0) {
             DateRangePickerView()

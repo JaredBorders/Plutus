@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AnalysisScreen: View {
     @State private var isShowingDetailsScreen = false
-    @State private var dictOfComparisons = [ComparisonDetails(cryptoTicker: "BTC", stockTicker: "DOW")]
+    @State private var listOfComparisons = [ComparisonDetails(cryptoTicker: "BTC", stockTicker: "DOW")]
     
     init() {
         UINavigationBar.appearance().tintColor = UIColor.label
@@ -39,17 +39,16 @@ struct AnalysisScreen: View {
                     }
                     ScrollView {
                         LazyVStack {
-                            ForEach(0..<dictOfComparisons.count) { i in
+                            ForEach(listOfComparisons) { comp in
                                 ZStack {
                                     NavigationLink(
                                         destination: DetailsScreen(),
                                         isActive: $isShowingDetailsScreen) {}
-                                    WatchListCard(isEditable: false,
-                                                  edit: navigateToEditView,
-                                                  cryptoTicker: $dictOfComparisons[i].cryptoTicker,
-                                                  stockTicker: $dictOfComparisons[i].stockTicker)
-                                        .padding(.top, 8)
-                                        .padding(.horizontal)
+                                    WatchListCard(id: UUID(),
+                                                  isEditable: false,
+                                                  edit: {},
+                                                  cryptoTicker: comp.cryptoTicker,
+                                                  stockTicker: comp.stockTicker)
                                 }
                             }
                         }
@@ -58,7 +57,7 @@ struct AnalysisScreen: View {
                 .navigationBarTitle("Plutus", displayMode: .automatic)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: DetailsScreen()) {
+                        NavigationLink(destination: AddComparisonScreen(isShowingDetailsScreen: $isShowingDetailsScreen, listOfComparisons: $listOfComparisons)) {
                             Image(systemSymbol: .plus)
                         }
                     }

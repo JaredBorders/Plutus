@@ -16,4 +16,9 @@ class ComparisonDetails: Identifiable {
         self.cryptoTicker = cryptoTicker
         self.stockTicker = stockTicker
     }
+    
+    init() {
+        self.cryptoTicker = ""
+        self.stockTicker = ""
+    }
 }
