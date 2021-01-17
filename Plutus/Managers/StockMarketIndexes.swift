@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum StockMarketIndex: String, Codable {
+enum StockMarketIndex: String, Codable, CaseIterable {
     case NSEI, HSI, DJI, SPX, BVSP, GDAXI, FTSE, STOXX50E, AEX, IXIC
 }
