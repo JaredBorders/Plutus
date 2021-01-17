@@ -31,29 +31,29 @@ struct ComparsionCardView: View {
             HStack {
                 VStack(alignment: .leading) {
                     HStack {
-                        (postiveChange ? Image(systemSymbol: .arrowDownRight) : Image(systemSymbol: .arrowUpForward))
+                        (postiveChange ? Image(systemSymbol: .arrowUpForward) : Image(systemSymbol: .arrowDownRight))
                             .foregroundColor(postiveChange ? .green : .red)
                         Text(name)
-                            .font(.custom(Fonts.quicksandSemiBold, size: 18))
+                            .font(.custom(Fonts.quicksandSemiBold, size: 16))
                     }
                     Text("$\(currentValueStr)")
-                        .font(.custom(Fonts.quicksandLight, size: 18))
+                        .font(.custom(Fonts.quicksandLight, size: 16))
                 }
                 .padding(.vertical)
                 Spacer()
                 VStack(alignment: .center) {
                     Text(dateRange.rawValue)
-                        .font(.custom(Fonts.quicksandSemiBold, size: 18))
-                    Text("%\(percentChangeStr)")
-                        .font(.custom(Fonts.quicksandSemiBold, size: 18))
+                        .font(.custom(Fonts.quicksandSemiBold, size: 16))
+                    Text("\(postiveChange ? "+" : "-")$\(valueChangeStr)")
+                        .font(.custom(Fonts.quicksandSemiBold, size: 16))
                         .foregroundColor(postiveChange ? .green : .red)
-                    Text("\(postiveChange ? "+" : "-")\(valueChangeStr)")
-                        .font(.custom(Fonts.quicksandSemiBold, size: 18))
+                    Text("\(percentChangeStr)%")
+                        .font(.custom(Fonts.quicksandSemiBold, size: 16))
                         .foregroundColor(postiveChange ? .green : .red)
                 }
                 .padding(.vertical)
             }
-            .padding(.horizontal)
+            .padding(.horizontal, 50)
         }
         .overlay(
             RoundedRectangle(cornerRadius: 16)
