@@ -12,9 +12,7 @@ enum TimeRange {
 }
 
 struct AnalysisModel: Identifiable {
-    var id: String {
-        return UUID().uuidString
-    }
+    var id = UUID()
     
     var timeRange: DateRanges
     var watchlist: WathclistModel
@@ -41,7 +39,7 @@ struct AnalysisScreen: View {
         AnalysisModel(timeRange: .Day, watchlist:  WathclistModel(crypto: .ETC, stock: .DJI, cryptoValue: "356", cryptoDifference: "+22.55", stockValue: "30814.26", stockDifference: "-1.0")),
         AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .XRP, stock: .DJI, cryptoValue: "0.35", cryptoDifference: "-12.44", stockValue: "30814.26", stockDifference: "-1.0"))
     ]
-    
+
     init() {
         UINavigationBar.appearance().tintColor = UIColor.label
         UINavigationBar.appearance().titleTextAttributes = [
@@ -54,32 +52,33 @@ struct AnalysisScreen: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
+            ScrollView {
+                LazyVStack {
+                    HStack {
                         Text("My Watch List")
                             .font(.custom(Fonts.quicksandSemiBold, size: 18))
                             .padding([.top, .leading])
                         Spacer()
+                    }
+                    ForEach(analysisData, id: \.id) { watchListItem in
+                        WatchListCard(watchListItem: watchListItem)
+                            .padding(.top)
+                    }
                 }
-                List(analysisData) { watchListItem in
-                    WatchListCard(watchListItem: watchListItem)
-                }
-                .navigationBarTitle("Plutus", displayMode: .automatic)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: DetailsScreen(watclistItem: analysisData[0])) {
-                            Image(systemSymbol: .plus)
-                        }
+            }
+            .navigationTitle("Plutus")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: DetailsScreen(watchListItem: analysisData[0])) {
+                        Image(systemSymbol: .plus)
                     }
                 }
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear(perform: {
-            updateData()
-        })
+        .onAppear(perform: updateData)
     }
-    
+
     private func updateData() {
         
     }
