@@ -17,8 +17,8 @@ struct DetailsScreen: View {
             ScrollView { // eventually this will be a ForEach
                 WatchListCard(isEditable: false,
                               edit: {},
-                              cryptoTicker: $dictOfComparisons[0].cryptoTicker,
-                              stockTicker: $dictOfComparisons[0].stockTicker)
+                              cryptoTicker: dictOfComparisons[0].cryptoTicker,
+                              stockTicker: dictOfComparisons[0].stockTicker)
                     .padding([.top, .horizontal])
                 Divider()
                 ComparsionCardView(name: "BTC",
