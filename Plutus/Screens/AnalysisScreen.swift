@@ -63,8 +63,6 @@ struct AnalysisScreen: View {
                 }
                 List(analysisData) { watchListItem in
                     WatchListCard(watchListItem: watchListItem)
-                        .padding(.top, 8)
-                        .padding(.horizontal)
                 }
                 .navigationBarTitle("Plutus", displayMode: .automatic)
                 .toolbar {
