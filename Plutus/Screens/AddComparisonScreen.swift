@@ -47,7 +47,7 @@ struct AddComparisonScreen: View {
                     )
                     .padding()
                 } else {
-                    TickerView(name: newComparison.cryptoTicker, currentValue: 40000, percentChange: 10, valueChange: 4000, dateRange: DateRanges.Day)
+                    TickerView(name: newComparison.cryptoTicker, currentValue: "40000", percentChange: "10", valueChange: "4000", dateRange: DateRanges.Day)
                 }
                 
                 if newComparison.stockTicker == "" {
@@ -63,7 +63,7 @@ struct AddComparisonScreen: View {
                     )
                     .padding()
                 } else {
-                    TickerView(name: newComparison.stockTicker, currentValue: 30814.26, percentChange: -0.57, valueChange: -177.26, dateRange: DateRanges.Day)
+                    TickerView(name: newComparison.stockTicker, currentValue: "30814.26", percentChange: "-0.57", valueChange: "-177.26", dateRange: DateRanges.Day)
                 }
             }
             Spacer()

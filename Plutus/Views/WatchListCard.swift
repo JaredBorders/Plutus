@@ -14,6 +14,28 @@ struct WatchListCard: View, Identifiable {
     
     var cryptoTicker: String
     var stockTicker: String
+
+    var watchListItem: AnalysisModel
+    
+    var cryptoDifferece: Float {
+        let value = watchListItem.watchlist.cryptoValue
+        let diff = watchListItem.watchlist.cryptoDifference
+        if let value = Float(value), let diff = Float(diff) {
+            return value * (diff / 100)
+        } else {
+            return 0.0
+        }
+    }
+    
+    var stockDifferece: Float {
+        let value = watchListItem.watchlist.stockValue
+        let diff = watchListItem.watchlist.stockDifference
+        if let value = Float(value), let diff = Float(diff) {
+            return value * (diff / 100)
+        } else {
+            return 0.0
+        }
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -38,8 +60,9 @@ struct WatchListCard: View, Identifiable {
                             .stroke(Color.gray, lineWidth: 1)
                     )
                 HStack {
-                    TickerView(name: cryptoTicker, currentValue: 40000, percentChange: 10, valueChange: 4000, dateRange: DateRanges.Day)
-                    TickerView(name: stockTicker, currentValue: 30814.26, percentChange: -0.57, valueChange: -177.26, dateRange: DateRanges.Day)
+
+                    TickerView(name: watchListItem.watchlist.crypto.rawValue, currentValue: watchListItem.watchlist.cryptoValue, percentChange: watchListItem.watchlist.cryptoDifference, valueChange: "\(cryptoDifferece)", dateRange: watchListItem.timeRange)
+                    TickerView(name: watchListItem.watchlist.stock.rawValue, currentValue: watchListItem.watchlist.stockValue, percentChange: watchListItem.watchlist.stockDifference, valueChange: "\(stockDifferece)", dateRange: watchListItem.timeRange)
                 }
             }
             .padding()
@@ -53,6 +76,10 @@ struct WatchListCard: View, Identifiable {
 
 struct WatchListCard_Previews: PreviewProvider {
     static var previews: some View {
-        WatchListCard(isEditable: true, edit: {}, cryptoTicker: "BTC", stockTicker: "DOW")
+
+        let data = WathclistModel(crypto: .BTC, stock: .AEX, cryptoValue: "38500", cryptoDifference: "+10.5", stockValue: "345000", stockDifference: "-0.5")
+        let analysisModel = AnalysisModel(timeRange: .Day, watchlist: data)
+
+        WatchListCard(id: UUID(), isEditable: true, edit: {}, cryptoTicker: "BTC", stockTicker: "NASDAQ", watchListItem: analysisModel)
     }
 }
