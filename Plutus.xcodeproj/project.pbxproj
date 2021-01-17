@@ -26,7 +26,7 @@
 		B875497125B3D01500D646F2 /* TickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875497025B3D01500D646F2 /* TickerView.swift */; };
 		B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7826F25B394200015B8DF /* DateRangePickerView.swift */; };
 		B8F7827825B3942F0015B8DF /* ComparsionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */; };
-		B8F7828D25B39C0D0015B8DF /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = B8F7828C25B39C0D0015B8DF /* SFSafeSymbols */; };
+		C62D464025B3EC3D009CD1DF /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62D463F25B3EC3D009CD1DF /* DetailsScreen.swift */; };
 		C68F98E625B38B0600CC2950 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E125B38B0500CC2950 /* Quicksand-Light.ttf */; };
 		C68F98E725B38B0600CC2950 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E225B38B0600CC2950 /* Quicksand-Medium.ttf */; };
 		C68F98E825B38B0600CC2950 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E325B38B0600CC2950 /* Quicksand-Regular.ttf */; };
@@ -77,6 +77,7 @@
 		B875497025B3D01500D646F2 /* TickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerView.swift; sourceTree = "<group>"; };
 		B8F7826F25B394200015B8DF /* DateRangePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerView.swift; sourceTree = "<group>"; };
 		B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparsionCardView.swift; sourceTree = "<group>"; };
+		C62D463F25B3EC3D009CD1DF /* DetailsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
 		C68F98E125B38B0500CC2950 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
 		C68F98E225B38B0600CC2950 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
 		C68F98E325B38B0600CC2950 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
@@ -215,7 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				B875496325B3CA6A00D646F2 /* AnalysisScreen.swift */,
-				B843104025B391CD005544E5 /* DetailsScreen.swift */,
+				C62D463F25B3EC3D009CD1DF /* DetailsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -411,17 +412,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8F7827025B394210015B8DF /* (null) in Sources */,
+				B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */,
 				C68F98F925B38E5300CC2950 /* NetworkManager.swift in Sources */,
 				4DD67D8525B3E0350043EABC /* Endpoints.swift in Sources */,
 				4DD67D1625B3CFBD0043EABC /* DailyAdjustedStockModel.swift in Sources */,
 				4DD67D1425B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift in Sources */,
 				B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */,
 				B875496C25B3CBC000D646F2 /* WatchListCard.swift in Sources */,
-				B843104125B391CD005544E5 /* DetailsScreen.swift in Sources */,
 				B8F7827825B3942F0015B8DF /* ComparsionCardView.swift in Sources */,
 				B875496425B3CA6A00D646F2 /* AnalysisScreen.swift in Sources */,
 				B855659E25B37B7F00DD534D /* Persistence.swift in Sources */,
+				C62D464025B3EC3D009CD1DF /* DetailsScreen.swift in Sources */,
 				B875497125B3D01500D646F2 /* TickerView.swift in Sources */,
 				4DD67D1725B3CFBD0043EABC /* WeeklyAdjustedStockModel.swift in Sources */,
 				B855659725B37B7E00DD534D /* ContentView.swift in Sources */,
