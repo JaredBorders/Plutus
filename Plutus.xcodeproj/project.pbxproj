@@ -15,6 +15,9 @@
 		B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B855659F25B37B7F00DD534D /* Plutus.xcdatamodeld */; };
 		B85565AC25B37B7F00DD534D /* PlutusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565AB25B37B7F00DD534D /* PlutusTests.swift */; };
 		B85565B725B37B7F00DD534D /* PlutusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565B625B37B7F00DD534D /* PlutusUITests.swift */; };
+		B875496425B3CA6A00D646F2 /* AnalysisScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875496325B3CA6A00D646F2 /* AnalysisScreen.swift */; };
+		B875496C25B3CBC000D646F2 /* WatchListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875496B25B3CBC000D646F2 /* WatchListCard.swift */; };
+		B875497125B3D01500D646F2 /* TickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875497025B3D01500D646F2 /* TickerView.swift */; };
 		B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7826F25B394200015B8DF /* DateRangePickerView.swift */; };
 		B8F7827825B3942F0015B8DF /* ComparsionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */; };
 		B8F7828D25B39C0D0015B8DF /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = B8F7828C25B39C0D0015B8DF /* SFSafeSymbols */; };
@@ -59,6 +62,9 @@
 		B85565B225B37B7F00DD534D /* PlutusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlutusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85565B625B37B7F00DD534D /* PlutusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlutusUITests.swift; sourceTree = "<group>"; };
 		B85565B825B37B7F00DD534D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B875496325B3CA6A00D646F2 /* AnalysisScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisScreen.swift; sourceTree = "<group>"; };
+		B875496B25B3CBC000D646F2 /* WatchListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListCard.swift; sourceTree = "<group>"; };
+		B875497025B3D01500D646F2 /* TickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerView.swift; sourceTree = "<group>"; };
 		B8F7826F25B394200015B8DF /* DateRangePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerView.swift; sourceTree = "<group>"; };
 		B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparsionCardView.swift; sourceTree = "<group>"; };
 		C68F98E125B38B0500CC2950 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
@@ -196,6 +202,7 @@
 		C68F98FD25B38E5700CC2950 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B875496325B3CA6A00D646F2 /* AnalysisScreen.swift */,
 				B843104025B391CD005544E5 /* DetailsScreen.swift */,
 			);
 			path = Screens;
@@ -206,6 +213,8 @@
 			children = (
 				B8F7826F25B394200015B8DF /* DateRangePickerView.swift */,
 				B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */,
+				B875496B25B3CBC000D646F2 /* WatchListCard.swift */,
+				B875497025B3D01500D646F2 /* TickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -387,9 +396,12 @@
 				B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */,
 				C68F98F925B38E5300CC2950 /* NetworkManager.swift in Sources */,
 				B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */,
+				B875496C25B3CBC000D646F2 /* WatchListCard.swift in Sources */,
 				B843104125B391CD005544E5 /* DetailsScreen.swift in Sources */,
 				B8F7827825B3942F0015B8DF /* ComparsionCardView.swift in Sources */,
+				B875496425B3CA6A00D646F2 /* AnalysisScreen.swift in Sources */,
 				B855659E25B37B7F00DD534D /* Persistence.swift in Sources */,
+				B875497125B3D01500D646F2 /* TickerView.swift in Sources */,
 				B855659725B37B7E00DD534D /* ContentView.swift in Sources */,
 				C68F98F025B38B2E00CC2950 /* constants.swift in Sources */,
 				B855659525B37B7E00DD534D /* PlutusApp.swift in Sources */,
