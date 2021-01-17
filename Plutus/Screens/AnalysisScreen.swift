@@ -33,13 +33,14 @@ struct WathclistModel: Codable, Identifiable {
 
 struct AnalysisScreen: View {
     @State private var isShowingDetailsScreen = false
+    @State private var listOfComparisons = [ComparisonDetails(cryptoTicker: "BTC", stockTicker: "DOW")]
 
     var analysisData: [AnalysisModel] = [
         AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .BTC, stock: .DJI, cryptoValue: "38555", cryptoDifference: "+12.65", stockValue: "30814.26", stockDifference: "-1.0")),
         AnalysisModel(timeRange: .Day, watchlist:  WathclistModel(crypto: .ETC, stock: .DJI, cryptoValue: "356", cryptoDifference: "+22.55", stockValue: "30814.26", stockDifference: "-1.0")),
         AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .XRP, stock: .DJI, cryptoValue: "0.35", cryptoDifference: "-12.44", stockValue: "30814.26", stockDifference: "-1.0"))
     ]
-
+    
     init() {
         UINavigationBar.appearance().tintColor = UIColor.label
         UINavigationBar.appearance().titleTextAttributes = [
@@ -49,9 +50,14 @@ struct AnalysisScreen: View {
             NSAttributedString.Key.font: UIFont(name: Fonts.quicksandBold, size: 40)!
         ]
     }
-
+    
+    func navigateToEditView() {
+        self.isShowingDetailsScreen = true
+    }
+    
     var body: some View {
         NavigationView {
+            
             ScrollView {
                 LazyVStack {
                     HStack {
@@ -60,8 +66,9 @@ struct AnalysisScreen: View {
                             .padding([.top, .leading])
                         Spacer()
                     }
+                    
                     ForEach(analysisData, id: \.id) { watchListItem in
-                        WatchListCard(watchListItem: watchListItem)
+                        WatchListCard(isEditable: false, edit: {}, cryptoTicker: watchListItem.watchlist.crypto.rawValue, stockTicker: watchListItem.watchlist.stock.rawValue, watchListItem: watchListItem)
                             .padding(.top)
                     }
                 }
@@ -69,7 +76,7 @@ struct AnalysisScreen: View {
             .navigationTitle("Plutus")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: DetailsScreen(watchListItem: analysisData[0])) {
+                    NavigationLink(destination: AddComparisonScreen(isShowingDetailsScreen: $isShowingDetailsScreen, listOfComparisons: $listOfComparisons)) {
                         Image(systemSymbol: .plus)
                     }
                 }
@@ -78,7 +85,7 @@ struct AnalysisScreen: View {
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: updateData)
     }
-
+    
     private func updateData() {
         
     }

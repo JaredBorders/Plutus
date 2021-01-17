@@ -32,6 +32,15 @@
 		B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B855659F25B37B7F00DD534D /* Plutus.xcdatamodeld */; };
 		B85565AC25B37B7F00DD534D /* PlutusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565AB25B37B7F00DD534D /* PlutusTests.swift */; };
 		B85565B725B37B7F00DD534D /* PlutusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85565B625B37B7F00DD534D /* PlutusUITests.swift */; };
+
+		B875496425B3CA6A00D646F2 /* AnalysisScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875496325B3CA6A00D646F2 /* AnalysisScreen.swift */; };
+		B875496C25B3CBC000D646F2 /* WatchListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875496B25B3CBC000D646F2 /* WatchListCard.swift */; };
+		B875497125B3D01500D646F2 /* TickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875497025B3D01500D646F2 /* TickerView.swift */; };
+		B890586025B43570005BB235 /* ComparisonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890585F25B43570005BB235 /* ComparisonDetails.swift */; };
+		B890587125B43A04005BB235 /* AddComparisonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890587025B43A04005BB235 /* AddComparisonScreen.swift */; };
+		B890587625B44299005BB235 /* CryptoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890587525B44299005BB235 /* CryptoListView.swift */; };
+		B890587B25B442A4005BB235 /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890587A25B442A4005BB235 /* StockListView.swift */; };
+
 		B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7826F25B394200015B8DF /* DateRangePickerView.swift */; };
 		B8F7827825B3942F0015B8DF /* ComparsionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */; };
 		C68F98E625B38B0600CC2950 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C68F98E125B38B0500CC2950 /* Quicksand-Light.ttf */; };
@@ -89,6 +98,10 @@
 		B875496325B3CA6A00D646F2 /* AnalysisScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisScreen.swift; sourceTree = "<group>"; };
 		B875496B25B3CBC000D646F2 /* WatchListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListCard.swift; sourceTree = "<group>"; };
 		B875497025B3D01500D646F2 /* TickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerView.swift; sourceTree = "<group>"; };
+		B890585F25B43570005BB235 /* ComparisonDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonDetails.swift; sourceTree = "<group>"; };
+		B890587025B43A04005BB235 /* AddComparisonScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddComparisonScreen.swift; sourceTree = "<group>"; };
+		B890587525B44299005BB235 /* CryptoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListView.swift; sourceTree = "<group>"; };
+		B890587A25B442A4005BB235 /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
 		B8F7826F25B394200015B8DF /* DateRangePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangePickerView.swift; sourceTree = "<group>"; };
 		B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparsionCardView.swift; sourceTree = "<group>"; };
 		C62D463F25B3EC3D009CD1DF /* DetailsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
@@ -186,6 +199,14 @@
 			path = PlutusUITests;
 			sourceTree = "<group>";
 		};
+		B890585B25B43539005BB235 /* Comparison */ = {
+			isa = PBXGroup;
+			children = (
+				B890585F25B43570005BB235 /* ComparisonDetails.swift */,
+			);
+			path = Comparison;
+			sourceTree = "<group>";
+		};
 		C68F98DF25B3887200CC2950 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				B875496325B3CA6A00D646F2 /* AnalysisScreen.swift */,
+				B890587025B43A04005BB235 /* AddComparisonScreen.swift */,
 				C62D463F25B3EC3D009CD1DF /* DetailsScreen.swift */,
 			);
 			path = Screens;
@@ -245,6 +267,8 @@
 				B8F7827725B3942F0015B8DF /* ComparsionCardView.swift */,
 				B875496B25B3CBC000D646F2 /* WatchListCard.swift */,
 				B875497025B3D01500D646F2 /* TickerView.swift */,
+				B890587525B44299005BB235 /* CryptoListView.swift */,
+				B890587A25B442A4005BB235 /* StockListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,6 +290,7 @@
 		C68F990925B38EFD00CC2950 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B890585B25B43539005BB235 /* Comparison */,
 				4DD67D1225B3CFBD0043EABC /* DailyAdjustedStockModel.swift */,
 				4DD67E1F25B4549A0043EABC /* AnalysisModel.swift */,
 				4DD67D1325B3CFBD0043EABC /* WeeklyAdjustedStockModel.swift */,
@@ -439,6 +464,9 @@
 				B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */,
 				C68F98F925B38E5300CC2950 /* NetworkManager.swift in Sources */,
 				4DD67D8525B3E0350043EABC /* Endpoints.swift in Sources */,
+				B890587B25B442A4005BB235 /* StockListView.swift in Sources */,
+				B890586025B43570005BB235 /* ComparisonDetails.swift in Sources */,
+				B890587125B43A04005BB235 /* AddComparisonScreen.swift in Sources */,
 				4DD67D1625B3CFBD0043EABC /* DailyAdjustedStockModel.swift in Sources */,
 				4DD67DE425B4498F0043EABC /* TickerView.swift in Sources */,
 				4DD67D1425B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift in Sources */,
@@ -457,6 +485,7 @@
 				4DD67DD825B4494E0043EABC /* AnalysisScreen.swift in Sources */,
 				4DD67D1525B3CFBD0043EABC /* SearchStockModel.swift in Sources */,
 				B855659525B37B7E00DD534D /* PlutusApp.swift in Sources */,
+				B890587625B44299005BB235 /* CryptoListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

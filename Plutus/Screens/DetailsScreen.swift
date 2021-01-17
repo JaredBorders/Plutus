@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DetailsScreen: View {
+    @State private var dictOfComparisons = [ComparisonDetails(cryptoTicker: "BTC", stockTicker: "DOW")]
+
     // No state varibales yet. This all just uses moch data
     var watchListItem: AnalysisModel
     
@@ -16,8 +18,20 @@ struct DetailsScreen: View {
             DateRangePickerView()
             Divider()
             ScrollView { // eventually this will be a ForEach
+//                WatchListCard(isEditable: false,
+//                              edit: {},
+//                              cryptoTicker: dictOfComparisons[0].cryptoTicker,
+//                              stockTicker: dictOfComparisons[0].stockTicker)
+//                    .padding([.top, .horizontal])
+//                Divider()
+//                ComparsionCardView(name: "BTC",
+//                                   currentValue: 44000,
+//                                   percentChange: 10,
+//                                   valueChange: 4000,
+//                                   dateRange: DateRanges.Day,
+//                                   isSelected: true)
                 LazyVStack {
-                    WatchListCard(watchListItem: watchListItem)
+                    WatchListCard(id: UUID(), isEditable: false, edit: {}, cryptoTicker: "BTC", stockTicker: "NASDAQ", watchListItem: watchListItem)
                         .padding(.top)
                     Divider()
                     ComparsionCardView(
@@ -28,18 +42,18 @@ struct DetailsScreen: View {
                         dateRange: DateRanges.Day,
                         isSelected: true
                     )
-                    .padding(.vertical, 6)
-                    .padding(.horizontal)
-                    ComparsionCardView(
-                        name: "DOW",
-                        currentValue: 30814.26,
-                        percentChange: -0.57,
-                        valueChange: -177.26,
-                        dateRange: DateRanges.Day,
-                        isSelected: true
-                    )
-                    .padding(.vertical, 6)
-                    .padding(.horizontal)
+//                    .padding(.vertical, 6)
+//                    .padding(.horizontal)
+//                    ComparsionCardView(
+//                        name: "DOW",
+//                        currentValue: 30814.26,
+//                        percentChange: -0.57,
+//                        valueChange: -177.26,
+//                        dateRange: DateRanges.Day,
+//                        isSelected: true
+//                    )
+//                    .padding(.vertical, 6)
+//                    .padding(.horizontal)
                     ComparsionCardView(
                         name: "ETH",
                         currentValue: 1400,
@@ -61,6 +75,7 @@ struct DetailsScreen: View {
                     .padding(.vertical, 6)
                     .padding(.horizontal)
                 }
+                //
             }
         }
         .navigationBarTitle("Add Comparisons", displayMode: .inline)
