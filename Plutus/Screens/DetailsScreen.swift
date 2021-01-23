@@ -16,8 +16,8 @@ struct DetailsScreen: View {
             DateRangePickerView()
             Divider()
             ScrollView { // eventually this will be a ForEach
-                WatchListCard(watchListItem: watclistItem)
-                    .padding(.top)
+//                WatchListCard(watchListItem: watclistItem)
+//                    .padding(.top)
                 Divider()
                 ComparsionCardView(name: "BTC",
                                    currentValue: 44000,

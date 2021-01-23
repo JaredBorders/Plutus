@@ -15,9 +15,7 @@ public class EmptyResponse: Codable {
 }
 
 final class NetworkManager {
-    
-    let comparisonGroup = DispatchGroup()
-    
+        
     public init(sessionManager: Alamofire.Session = Alamofire.Session(configuration: URLSessionConfiguration.default)) {
         self.session = sessionManager
     }
@@ -70,13 +68,12 @@ final class NetworkManager {
     }
     
     public func requestComparison(comparison: FavoriteComparison, completion: @escaping Completion<ComparisonValueModel>){
-        var comparisonData: AnalysisModel?
         var cryptoData: CryptoModel?
         var stockData: StockModel?
         
         var stockTimeRange: StockDataRange?
         var cryptoTimeRange: CryptoDataRange?
-        
+                
         switch comparison.timeRange {
         case .Day:
             stockTimeRange = .day
@@ -97,27 +94,26 @@ final class NetworkManager {
                 print(data)
                 cryptoData = data
                 if  let cryptoData = cryptoData, let stock = stockData {
-                    let comparisonData = ComparisonValueModel(crypto: cryptoData, stock: stock)
+                    let comparisonData = ComparisonValueModel(timeRange: comparison.timeRange, cryptoName: comparison.crypto, stockName: comparison.stock, crypto: cryptoData, stock: stock)
                     completion(.success(comparisonData))
-                    
                 }
             case .failure(let err):
                 print(err)
+                completion(.failure(err))
             }
         }
         
-        comparisonGroup.enter()
         request(type: StockModel.self, endpoint: .genericStock(query: StockQueryModel(ticker: comparison.stock, timespan: stockTimeRange ?? .day, from: Date()))) { (result) in
             switch result {
             case .success(let data):
                 stockData = data
                 if let cryptoData = cryptoData, let stock = stockData {
-                    let comparisonData = ComparisonValueModel(crypto: cryptoData, stock: stock)
+                    let comparisonData = ComparisonValueModel(timeRange: comparison.timeRange, cryptoName: comparison.crypto, stockName: comparison.stock, crypto: cryptoData, stock: stock)
                     completion(.success(comparisonData))
                 }
             case .failure(let err):
                 print(err)
-                
+                completion(.failure(err))
             }
         }
         

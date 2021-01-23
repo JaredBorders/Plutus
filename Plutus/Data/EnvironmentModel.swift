@@ -7,5 +7,5 @@
 
 import Foundation
 final class ModelData: ObservableObject {
-   @Published var data: [AnalysisModel] = []
+   @Published var data: [ComparisonValueModel] = []
 }
