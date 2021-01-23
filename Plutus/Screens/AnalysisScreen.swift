@@ -14,7 +14,6 @@ enum TimeRange {
 struct AnalysisModel: Decodable {
     var timeRange: DateRanges
     var watchlist: WathclistModel
-    
 }
 
 struct WathclistModel: Codable, Identifiable {
@@ -44,9 +43,9 @@ struct ComparisonValueModel: Codable {
 
 struct AnalysisScreen: View {
     @State var manager: NetworkManager?
-    var requestGroup = DispatchGroup()
-    
     @State private var isShowingDetailsScreen = false
+    @State private var listOfComparisons = [ComparisonDetails(cryptoTicker: "BTC", stockTicker: "DOW")]
+    @ObservedObject var store = ChartStore()
     @EnvironmentObject var modelData: ModelData
     
     init() {
@@ -61,20 +60,29 @@ struct AnalysisScreen: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
-                    Text("My Watch List")
-                        .font(.custom(Fonts.quicksandSemiBold, size: 18))
-                        .padding([.top, .leading])
-                    Spacer()
+            ScrollView {
+                LazyVStack {
+                    HStack {
+                        Text("My Watch List")
+                            .font(.custom(Fonts.quicksandSemiBold, size: 18))
+                            .padding([.top, .leading])
+                        Spacer()
+                    }
+                    List(modelData.data, id: \.id) { item in
+                        WatchListCard(isEditable: false, edit: {}, watchListItem: item)
+                            .padding(.top)
+                    }
+                    
+                    ForEach(modelData.data, id: \.id) { item in
+                        WatchListCard(isEditable: false, edit: {}, watchListItem: item)
+                            .padding(.top)
+                    }
+                    
                 }
-                List(modelData.data, id: \.id) { item in
-                    WatchListCard(watchListItem: item)
-                }
-                .navigationBarTitle("Plutus", displayMode: .automatic)
+                .navigationTitle("Plutus")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: DetailsScreen(watclistItem: AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .BTC, stock: .ARKG, cryptoValue: 38555, cryptoDifference: [12.65], stockValue: 30814.26, stockDifference: [-1.0])))) {
+                        NavigationLink(destination: AddComparisonScreen(isShowingDetailsScreen: $isShowingDetailsScreen, listOfComparisons: $listOfComparisons)) {
                             Image(systemSymbol: .plus)
                         }
                     }
@@ -107,6 +115,7 @@ struct AnalysisScreen: View {
                 }
             }
         }
+//        store.fetchDaily()
     }
 }
 

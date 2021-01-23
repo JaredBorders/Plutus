@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum StockMarketIndex: String, Codable {
+enum StockMarketIndex: String, Codable, CaseIterable {
     case AAPL, IBM, UVXY, ARKG, VXX
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DigitalCurrency: String, Codable {
+enum DigitalCurrency: String, Codable, CaseIterable {
     case BTC, ETH, XRP, Rise, ROAD, Cosmos, ETC, AION, ZCC
    
     var id: String {

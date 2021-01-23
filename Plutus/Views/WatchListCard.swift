@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct WatchListCard: View {
-    
+    var id = UUID()
+    var isEditable: Bool // Component used in DetailsScreen. Should not be able to edit there.
+    var edit: (() -> ())
+//
     var watchListItem: ComparisonValueModel
 
     @State var cryptoPrices: [Double] = []
@@ -18,17 +21,26 @@ struct WatchListCard: View {
     @State var stockPrices: [Double] = []
     @State var stockComparedPriceDiff: [Double] = []
     @State var stockComparedPriceDiffPercentage: [Double] = []
+
     
     
     var body: some View {
         VStack(alignment: .leading) {
             VStack {
-                Text("📈 Elena's Graph") // GraphView will eventually go here @elena
-                    .padding(80)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
+                HStack {
+                    Spacer()
+                    Button {
+                        edit() // Edit WatchListCard
+                    } label: {
+                        if isEditable {
+                            Image(systemSymbol: .pencil)
+                                .resizable()
+                                .frame(width: 16, height: 16)
+                                .foregroundColor(.gray)
+                        }
+                    }
+                }
+                StaticChart()
                 HStack {
                     TickerView(name: watchListItem.cryptoName.rawValue, currentValue: "\(cryptoPrices.first ?? 0)", percentChange: "\(comparedPriceDiffPercentage.first ?? 0)", valueChange: "\(comparedPriceDiff.first ?? 0)", dateRange: watchListItem.timeRange)
                     TickerView(name: watchListItem.stockName.rawValue, currentValue: "\(stockPrices.first ?? 0)", percentChange: "\(stockComparedPriceDiffPercentage.first ?? 0)", valueChange: "\(stockComparedPriceDiff.first ?? 0)", dateRange: watchListItem.timeRange)
@@ -70,8 +82,17 @@ struct WatchListCard: View {
 
 struct WatchListCard_Previews: PreviewProvider {
     static var previews: some View {
+
         let data = ComparisonValueModel(timeRange: .Day, cryptoName: .AION, stockName: .AAPL, crypto: CryptoModel(prices: [[0.0]], marketCaps: [[0.0]], totalVolumes: [[0.0]]), stock: StockModel(ticker: "ticker", queryCount: 1, resultsCount: 7, adjusted: true, results: [StockResult(v: 0, vw: 0, o: 0, c: 0, h: 0, l: 0, t: 0)], status: "", requestID: "", count: 0))
 
-        WatchListCard(watchListItem: data)
+        WatchListCard(id: UUID(), isEditable: true, edit: {}, watchListItem: data)
+
+//=======
+//
+//        let data = WathclistModel(crypto: .BTC, stock: .AEX, cryptoValue: "38500", cryptoDifference: "+10.5", stockValue: "345000", stockDifference: "-0.5")
+//        let analysisModel = AnalysisModel(timeRange: .Day, watchlist: data)
+//
+//        WatchListCard(id: UUID(), isEditable: true, edit: {}, cryptoTicker: "BTC", stockTicker: "NASDAQ", watchListItem: analysisModel)
+//>>>>>>> main
     }
 }
