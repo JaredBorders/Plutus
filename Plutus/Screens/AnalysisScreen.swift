@@ -31,8 +31,8 @@ struct WathclistModel: Codable, Identifiable {
 }
 
 struct ComparisonValueModel: Codable {
-    var id: UUID {
-        return UUID()
+    var id: String {
+        return stock.requestID
     }
     
     let timeRange: DateRanges
@@ -97,7 +97,7 @@ struct AnalysisScreen: View {
         manager = NetworkManager()
         
         comparisons.forEach { (comparison) in
-            manager?.requestComparison(comparison: comparisons.first!) { (result) in
+            manager?.requestComparison(comparison: comparison) { (result) in
                 switch result {
                 case .success(let data):
                     print(data)
