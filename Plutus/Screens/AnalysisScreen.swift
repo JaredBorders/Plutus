@@ -24,21 +24,30 @@ struct WathclistModel: Codable, Identifiable {
     
     let crypto: DigitalCurrency
     let stock: StockMarketIndex
-    let cryptoValue: String
-    let cryptoDifference: String
-    let stockValue: String
-    let stockDifference: String
+    let cryptoValue: Double
+    let cryptoDifference: [Double]
+    let stockValue: Double
+    let stockDifference: [Double]
+}
+
+struct ComparisonValueModel: Codable {
+    var crypto: CryptoModel
+    var stock: StockModel
 }
 
 struct AnalysisScreen: View {
+    @State var manager: NetworkManager?
+    var requestGroup = DispatchGroup()
+    
     @State private var isShowingDetailsScreen = false
     @EnvironmentObject var modelData: ModelData
 
-    var analysisData: [AnalysisModel] = [
-        AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .BTC, stock: .DJI, cryptoValue: "38555", cryptoDifference: "+12.65", stockValue: "30814.26", stockDifference: "-1.0")),
-        AnalysisModel(timeRange: .Day, watchlist:  WathclistModel(crypto: .ETC, stock: .DJI, cryptoValue: "356", cryptoDifference: "+22.55", stockValue: "30814.26", stockDifference: "-1.0")),
-        AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .XRP, stock: .DJI, cryptoValue: "0.35", cryptoDifference: "-12.44", stockValue: "30814.26", stockDifference: "-1.0"))
-    ]
+    var analysisData: [AnalysisModel] = []
+//        [
+//        AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .BTC, stock: .IBM, cryptoValue: 38555, cryptoDifference: +12.65, stockValue: 30814.26, stockDifference: -1.0)),
+//        AnalysisModel(timeRange: .Day, watchlist:  WathclistModel(crypto: .ETC, stock: .UVXY, cryptoValue: "356", cryptoDifference: "+22.55", stockValue: "30814.26", stockDifference: "-1.0")),
+//        AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .XRP, stock: .VXX, cryptoValue: "0.35", cryptoDifference: "-12.44", stockValue: "30814.26", stockDifference: "-1.0"))
+//    ]
     
     init() {
         UINavigationBar.appearance().tintColor = UIColor.label
@@ -65,7 +74,7 @@ struct AnalysisScreen: View {
                 .navigationBarTitle("Plutus", displayMode: .automatic)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: DetailsScreen(watclistItem: AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .BTC, stock: .DJI, cryptoValue: "38555", cryptoDifference: "+12.65", stockValue: "30814.26", stockDifference: "-1.0")))) {
+                        NavigationLink(destination: DetailsScreen(watclistItem: AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .BTC, stock: .ARKG, cryptoValue: 38555, cryptoDifference: [12.65], stockValue: 30814.26, stockDifference: [-1.0])))) {
                             Image(systemSymbol: .plus)
                         }
                     }
@@ -74,22 +83,37 @@ struct AnalysisScreen: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: {
-//            DispatchQueue.main.async {
+                parseCoinList()
                 updateData()
-//            }
-            
         })
     }
     
+    private func parseCoinList() {
+        
+    }
+    
     private func updateData() {
-        let comparisons = DefaultComparisons.comparison
-        NetworkManager.shared.requestComparison(comparison: comparisons.first!) { (result) in
-            switch result {
-            case .success(let data):
-                modelData.data.append(data)
-            case .failure(let err):
-                print(err)
-            }
+//        let comparisons = DefaultComparisons.comparison
+        manager = NetworkManager()
+        manager?.requestComparison(comparison: FavoriteComparison(crypto: .ROAD, stock: .AAPL, timeRange: .Day), completion: { (result) in
+            print(result)
+        })
+//        comparisons.forEach { (comparison) in
+//            requestGroup.enter()
+//            manager?.requestComparison(comparison: comparisons.first!) { (result) in
+//                switch result {
+//                case .success(let data):
+//                    print(data)
+//                    modelData.data.append(data)
+//                    requestGroup.leave()
+//                case .failure(let err):
+//                    print(err)
+//                    requestGroup.leave()
+//                }
+//            }
+//        }
+        requestGroup.notify(queue: .main) { 
+            print("request group is done")
         }
     }
 }

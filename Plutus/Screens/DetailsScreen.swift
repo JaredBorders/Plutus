@@ -59,7 +59,7 @@ struct DetailsScreen: View {
 
 struct DetailsScreen_Previews: PreviewProvider {
     static var previews: some View {
-        let watchList = WathclistModel(crypto: .BTC, stock: .AEX, cryptoValue: "38500", cryptoDifference: "+10.5", stockValue: "345000", stockDifference: "-0.5")
+        let watchList = WathclistModel(crypto: .BTC, stock: .AAPL, cryptoValue: 38500, cryptoDifference: [10.5], stockValue: 345000, stockDifference: [-0.5])
         let analysisModel = AnalysisModel(timeRange: .Day, watchlist: watchList)
 
         DetailsScreen(watclistItem: analysisModel)

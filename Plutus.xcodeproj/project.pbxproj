@@ -8,15 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4DD67D0325B3CF3C0043EABC /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = B8F7828C25B39C0D0015B8DF /* SFSafeSymbols */; };
-		4DD67D1425B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67D1025B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift */; };
 		4DD67D1525B3CFBD0043EABC /* SearchStockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67D1125B3CFBD0043EABC /* SearchStockModel.swift */; };
-		4DD67D1625B3CFBD0043EABC /* DailyAdjustedStockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67D1225B3CFBD0043EABC /* DailyAdjustedStockModel.swift */; };
-		4DD67D1725B3CFBD0043EABC /* WeeklyAdjustedStockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67D1325B3CFBD0043EABC /* WeeklyAdjustedStockModel.swift */; };
 		4DD67D3C25B3D8550043EABC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD67D3B25B3D8550043EABC /* Alamofire */; };
 		4DD67D8525B3E0350043EABC /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67D8425B3E0350043EABC /* Endpoints.swift */; };
-		4DD67DA425B40D640043EABC /* MonthlyAdjustedCryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67DA125B40D630043EABC /* MonthlyAdjustedCryptoModel.swift */; };
-		4DD67DA525B40D640043EABC /* WeeklyAdjustedCryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67DA225B40D630043EABC /* WeeklyAdjustedCryptoModel.swift */; };
-		4DD67DA625B40D640043EABC /* DailyAdjustedCryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67DA325B40D630043EABC /* DailyAdjustedCryptoModel.swift */; };
 		4DD67DB225B40E730043EABC /* PhysicalCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67DB025B40E730043EABC /* PhysicalCurrency.swift */; };
 		4DD67DB325B40E730043EABC /* DigitalCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67DB125B40E730043EABC /* DigitalCurrency.swift */; };
 		4DD67DD825B4494E0043EABC /* AnalysisScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875496325B3CA6A00D646F2 /* AnalysisScreen.swift */; };
@@ -26,6 +20,9 @@
 		4DD67E2E25B457C50043EABC /* StockMarketIndexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67E2D25B457C50043EABC /* StockMarketIndexes.swift */; };
 		4DD67E3F25B470CD0043EABC /* EnvironmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67E3E25B470CD0043EABC /* EnvironmentModel.swift */; };
 		4DD67E4B25B4757D0043EABC /* FavoriteComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD67E4A25B4757D0043EABC /* FavoriteComparison.swift */; };
+		4DF4C6A025BC1342009C79B2 /* CryptoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4C69F25BC1342009C79B2 /* CryptoModel.swift */; };
+		4DF4C6EE25BC2AA1009C79B2 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4C6ED25BC2AA1009C79B2 /* StockModel.swift */; };
+		4DF4C6F625BC43ED009C79B2 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4C6F525BC43ED009C79B2 /* DateExtensions.swift */; };
 		B855659525B37B7E00DD534D /* PlutusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855659425B37B7E00DD534D /* PlutusApp.swift */; };
 		B855659725B37B7E00DD534D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855659625B37B7E00DD534D /* ContentView.swift */; };
 		B855659925B37B7F00DD534D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B855659825B37B7F00DD534D /* Assets.xcassets */; };
@@ -62,19 +59,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4DD67D1025B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyAdjustedStockModel.swift; sourceTree = "<group>"; };
 		4DD67D1125B3CFBD0043EABC /* SearchStockModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStockModel.swift; sourceTree = "<group>"; };
-		4DD67D1225B3CFBD0043EABC /* DailyAdjustedStockModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyAdjustedStockModel.swift; sourceTree = "<group>"; };
-		4DD67D1325B3CFBD0043EABC /* WeeklyAdjustedStockModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyAdjustedStockModel.swift; sourceTree = "<group>"; };
 		4DD67D8425B3E0350043EABC /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		4DD67DA125B40D630043EABC /* MonthlyAdjustedCryptoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyAdjustedCryptoModel.swift; sourceTree = "<group>"; };
-		4DD67DA225B40D630043EABC /* WeeklyAdjustedCryptoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyAdjustedCryptoModel.swift; sourceTree = "<group>"; };
-		4DD67DA325B40D630043EABC /* DailyAdjustedCryptoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyAdjustedCryptoModel.swift; sourceTree = "<group>"; };
 		4DD67DB025B40E730043EABC /* PhysicalCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalCurrency.swift; sourceTree = "<group>"; };
 		4DD67DB125B40E730043EABC /* DigitalCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalCurrency.swift; sourceTree = "<group>"; };
 		4DD67E2D25B457C50043EABC /* StockMarketIndexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMarketIndexes.swift; sourceTree = "<group>"; };
 		4DD67E3E25B470CD0043EABC /* EnvironmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentModel.swift; sourceTree = "<group>"; };
 		4DD67E4A25B4757D0043EABC /* FavoriteComparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteComparison.swift; sourceTree = "<group>"; };
+		4DF4C69F25BC1342009C79B2 /* CryptoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoModel.swift; sourceTree = "<group>"; };
+		4DF4C6ED25BC2AA1009C79B2 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
+		4DF4C6F525BC43ED009C79B2 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateExtensions.swift; path = Plutus/Models/APIModels/DateExtensions.swift; sourceTree = SOURCE_ROOT; };
 		B855659125B37B7E00DD534D /* Plutus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plutus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B855659425B37B7E00DD534D /* PlutusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlutusApp.swift; sourceTree = "<group>"; };
 		B855659625B37B7E00DD534D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -133,13 +127,9 @@
 		4DD67E4325B475260043EABC /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
-				4DD67D1225B3CFBD0043EABC /* DailyAdjustedStockModel.swift */,
-				4DD67D1325B3CFBD0043EABC /* WeeklyAdjustedStockModel.swift */,
-				4DD67D1025B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift */,
 				4DD67D1125B3CFBD0043EABC /* SearchStockModel.swift */,
-				4DD67DA325B40D630043EABC /* DailyAdjustedCryptoModel.swift */,
-				4DD67DA125B40D630043EABC /* MonthlyAdjustedCryptoModel.swift */,
-				4DD67DA225B40D630043EABC /* WeeklyAdjustedCryptoModel.swift */,
+				4DF4C69F25BC1342009C79B2 /* CryptoModel.swift */,
+				4DF4C6ED25BC2AA1009C79B2 /* StockModel.swift */,
 				4DD67E4A25B4757D0043EABC /* FavoriteComparison.swift */,
 			);
 			path = APIModels;
@@ -277,6 +267,7 @@
 		C68F990825B38EF700CC2950 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4DF4C6F525BC43ED009C79B2 /* DateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -444,28 +435,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DD67DA425B40D640043EABC /* MonthlyAdjustedCryptoModel.swift in Sources */,
 				4DD67DB325B40E730043EABC /* DigitalCurrency.swift in Sources */,
 				B8F7827025B394210015B8DF /* DateRangePickerView.swift in Sources */,
 				C68F98F925B38E5300CC2950 /* NetworkManager.swift in Sources */,
 				4DD67D8525B3E0350043EABC /* Endpoints.swift in Sources */,
-				4DD67D1625B3CFBD0043EABC /* DailyAdjustedStockModel.swift in Sources */,
 				4DD67DE425B4498F0043EABC /* TickerView.swift in Sources */,
-				4DD67D1425B3CFBD0043EABC /* MonthlyAdjustedStockModel.swift in Sources */,
+				4DF4C6F625BC43ED009C79B2 /* DateExtensions.swift in Sources */,
 				B85565A125B37B7F00DD534D /* Plutus.xcdatamodeld in Sources */,
-				4DD67DA525B40D640043EABC /* WeeklyAdjustedCryptoModel.swift in Sources */,
+				4DF4C6EE25BC2AA1009C79B2 /* StockModel.swift in Sources */,
 				B8F7827825B3942F0015B8DF /* ComparsionCardView.swift in Sources */,
 				4DD67DE025B4498C0043EABC /* WatchListCard.swift in Sources */,
 				B855659E25B37B7F00DD534D /* Persistence.swift in Sources */,
 				4DD67DB225B40E730043EABC /* PhysicalCurrency.swift in Sources */,
 				4DD67DDC25B4497C0043EABC /* DetailsScreen.swift in Sources */,
-				4DD67D1725B3CFBD0043EABC /* WeeklyAdjustedStockModel.swift in Sources */,
 				4DD67E4B25B4757D0043EABC /* FavoriteComparison.swift in Sources */,
 				B855659725B37B7E00DD534D /* ContentView.swift in Sources */,
-				4DD67DA625B40D640043EABC /* DailyAdjustedCryptoModel.swift in Sources */,
 				4DD67E2E25B457C50043EABC /* StockMarketIndexes.swift in Sources */,
 				C68F98F025B38B2E00CC2950 /* constants.swift in Sources */,
 				4DD67DD825B4494E0043EABC /* AnalysisScreen.swift in Sources */,
+				4DF4C6A025BC1342009C79B2 /* CryptoModel.swift in Sources */,
 				4DD67D1525B3CFBD0043EABC /* SearchStockModel.swift in Sources */,
 				B855659525B37B7E00DD534D /* PlutusApp.swift in Sources */,
 				4DD67E3F25B470CD0043EABC /* EnvironmentModel.swift in Sources */,

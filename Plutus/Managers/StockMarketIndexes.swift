@@ -8,5 +8,5 @@
 import Foundation
 
 enum StockMarketIndex: String, Codable {
-    case NSEI, HSI, DJI, SPX, BVSP, GDAXI, FTSE, STOXX50E, AEX, IXIC, IBM
+    case AAPL, IBM, UVXY, ARKG, VXX
 }
