@@ -11,9 +11,7 @@ enum TimeRange {
     case daily, weekly, monthly, yearly
 }
 
-struct AnalysisModel: Identifiable {
-    var id = UUID()
-    
+struct AnalysisModel: Decodable {
     var timeRange: DateRanges
     var watchlist: WathclistModel
 }
@@ -25,22 +23,30 @@ struct WathclistModel: Codable, Identifiable {
     
     let crypto: DigitalCurrency
     let stock: StockMarketIndex
-    let cryptoValue: String
-    let cryptoDifference: String
-    let stockValue: String
-    let stockDifference: String
+    let cryptoValue: Double
+    let cryptoDifference: [Double]
+    let stockValue: Double
+    let stockDifference: [Double]
+}
+
+struct ComparisonValueModel: Codable {
+    var id: String {
+        return stock.requestID
+    }
+    
+    let timeRange: DateRanges
+    let cryptoName: DigitalCurrency
+    let stockName: StockMarketIndex
+    var crypto: CryptoModel
+    var stock: StockModel
 }
 
 struct AnalysisScreen: View {
+    @State var manager: NetworkManager?
     @State private var isShowingDetailsScreen = false
     @State private var listOfComparisons = [ComparisonDetails(cryptoTicker: "BTC", stockTicker: "DOW")]
     @ObservedObject var store = ChartStore()
-
-    var analysisData: [AnalysisModel] = [
-        AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .BTC, stock: .DJI, cryptoValue: "38555", cryptoDifference: "+12.65", stockValue: "30814.26", stockDifference: "-1.0")),
-        AnalysisModel(timeRange: .Day, watchlist:  WathclistModel(crypto: .ETC, stock: .DJI, cryptoValue: "356", cryptoDifference: "+22.55", stockValue: "30814.26", stockDifference: "-1.0")),
-        AnalysisModel(timeRange: .Day, watchlist: WathclistModel(crypto: .XRP, stock: .DJI, cryptoValue: "0.35", cryptoDifference: "-12.44", stockValue: "30814.26", stockDifference: "-1.0"))
-    ]
+    @EnvironmentObject var modelData: ModelData
     
     init() {
         UINavigationBar.appearance().tintColor = UIColor.label
@@ -50,10 +56,6 @@ struct AnalysisScreen: View {
         UINavigationBar.appearance().largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: Fonts.quicksandBold, size: 40)!
         ]
-    }
-    
-    func navigateToEditView() {
-        self.isShowingDetailsScreen = true
     }
     
     var body: some View {
@@ -66,28 +68,54 @@ struct AnalysisScreen: View {
                             .padding([.top, .leading])
                         Spacer()
                     }
-                    
-                    ForEach(analysisData, id: \.id) { watchListItem in
-                        WatchListCard(isEditable: false, edit: {}, cryptoTicker: watchListItem.watchlist.crypto.rawValue, stockTicker: watchListItem.watchlist.stock.rawValue, watchListItem: watchListItem)
+                    List(modelData.data, id: \.id) { item in
+                        WatchListCard(isEditable: false, edit: {}, watchListItem: item)
                             .padding(.top)
                     }
+                    
+                    ForEach(modelData.data, id: \.id) { item in
+                        WatchListCard(isEditable: false, edit: {}, watchListItem: item)
+                            .padding(.top)
+                    }
+                    
                 }
-            }
-            .navigationTitle("Plutus")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: AddComparisonScreen(isShowingDetailsScreen: $isShowingDetailsScreen, listOfComparisons: $listOfComparisons)) {
-                        Image(systemSymbol: .plus)
+                .navigationTitle("Plutus")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: AddComparisonScreen(isShowingDetailsScreen: $isShowingDetailsScreen, listOfComparisons: $listOfComparisons)) {
+                            Image(systemSymbol: .plus)
+                        }
                     }
                 }
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear(perform: updateData)
+        .onAppear(perform: {
+            parseCoinList()
+            updateData()
+        })
+    }
+    
+    private func parseCoinList() {
+        
     }
     
     private func updateData() {
-        store.fetchDaily()
+        let comparisons = DefaultComparisons.comparison
+        manager = NetworkManager()
+        
+        comparisons.forEach { (comparison) in
+            manager?.requestComparison(comparison: comparison) { (result) in
+                switch result {
+                case .success(let data):
+                    print(data)
+                    modelData.data.append(data)
+                case .failure(let err):
+                    print(err)
+                }
+            }
+        }
+//        store.fetchDaily()
     }
 }
 

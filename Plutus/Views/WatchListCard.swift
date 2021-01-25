@@ -7,35 +7,22 @@
 
 import SwiftUI
 
-struct WatchListCard: View, Identifiable {
+struct WatchListCard: View {
     var id = UUID()
     var isEditable: Bool // Component used in DetailsScreen. Should not be able to edit there.
     var edit: (() -> ())
-    
-    var cryptoTicker: String
-    var stockTicker: String
+//
+    var watchListItem: ComparisonValueModel
 
-    var watchListItem: AnalysisModel
+    @State var cryptoPrices: [Double] = []
+    @State var comparedPriceDiff: [Double] = []
+    @State var comparedPriceDiffPercentage: [Double] = []
+
+    @State var stockPrices: [Double] = []
+    @State var stockComparedPriceDiff: [Double] = []
+    @State var stockComparedPriceDiffPercentage: [Double] = []
+
     
-    var cryptoDifferece: Float {
-        let value = watchListItem.watchlist.cryptoValue
-        let diff = watchListItem.watchlist.cryptoDifference
-        if let value = Float(value), let diff = Float(diff) {
-            return value * (diff / 100)
-        } else {
-            return 0.0
-        }
-    }
-    
-    var stockDifferece: Float {
-        let value = watchListItem.watchlist.stockValue
-        let diff = watchListItem.watchlist.stockDifference
-        if let value = Float(value), let diff = Float(diff) {
-            return value * (diff / 100)
-        } else {
-            return 0.0
-        }
-    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -55,8 +42,8 @@ struct WatchListCard: View, Identifiable {
                 }
                 StaticChart()
                 HStack {
-                    TickerView(name: watchListItem.watchlist.crypto.rawValue, currentValue: watchListItem.watchlist.cryptoValue, percentChange: watchListItem.watchlist.cryptoDifference, valueChange: "\(cryptoDifferece)", dateRange: watchListItem.timeRange)
-                    TickerView(name: watchListItem.watchlist.stock.rawValue, currentValue: watchListItem.watchlist.stockValue, percentChange: watchListItem.watchlist.stockDifference, valueChange: "\(stockDifferece)", dateRange: watchListItem.timeRange)
+                    TickerView(name: watchListItem.cryptoName.rawValue, currentValue: "\(cryptoPrices.first ?? 0)", percentChange: "\(comparedPriceDiffPercentage.first ?? 0)", valueChange: "\(comparedPriceDiff.first ?? 0)", dateRange: watchListItem.timeRange)
+                    TickerView(name: watchListItem.stockName.rawValue, currentValue: "\(stockPrices.first ?? 0)", percentChange: "\(stockComparedPriceDiffPercentage.first ?? 0)", valueChange: "\(stockComparedPriceDiff.first ?? 0)", dateRange: watchListItem.timeRange)
                 }
             }
             .padding()
@@ -65,15 +52,47 @@ struct WatchListCard: View, Identifiable {
             RoundedRectangle(cornerRadius: 16)
                 .stroke(Color.gray, lineWidth: 1)
         )
+        .onAppear(perform: {
+            calculateChanges()
+        })
+    }
+    private func calculateChanges() {
+        if let cryptoP = watchListItem.crypto.prices?.compactMap({$0.last}) {
+            cryptoPrices = cryptoP
+            for i in 0..<(cryptoPrices.count-1) {
+                let diff = cryptoPrices[i] - cryptoPrices[i+1]
+                comparedPriceDiff.append(diff)
+                let diffPercentage = diff / cryptoPrices[i]
+                comparedPriceDiffPercentage.append(diffPercentage)
+            }
+        }
+
+        watchListItem.stock.results.forEach({ (stockPrice) in
+            stockPrices.append(stockPrice.o)
+        })
+        
+        for i in 0..<(stockPrices.count - 1) {
+            let diff = stockPrices[i] - stockPrices[i+1]
+            stockComparedPriceDiff.append(diff)
+            let diffPercentage = diff / stockPrices[i]
+            stockComparedPriceDiffPercentage.append(diffPercentage)
+        }
     }
 }
 
 struct WatchListCard_Previews: PreviewProvider {
     static var previews: some View {
 
-        let data = WathclistModel(crypto: .BTC, stock: .AEX, cryptoValue: "38500", cryptoDifference: "+10.5", stockValue: "345000", stockDifference: "-0.5")
-        let analysisModel = AnalysisModel(timeRange: .Day, watchlist: data)
+        let data = ComparisonValueModel(timeRange: .Day, cryptoName: .AION, stockName: .AAPL, crypto: CryptoModel(prices: [[0.0]], marketCaps: [[0.0]], totalVolumes: [[0.0]]), stock: StockModel(ticker: "ticker", queryCount: 1, resultsCount: 7, adjusted: true, results: [StockResult(v: 0, vw: 0, o: 0, c: 0, h: 0, l: 0, t: 0)], status: "", requestID: "", count: 0))
 
-        WatchListCard(id: UUID(), isEditable: true, edit: {}, cryptoTicker: "BTC", stockTicker: "NASDAQ", watchListItem: analysisModel)
+        WatchListCard(id: UUID(), isEditable: true, edit: {}, watchListItem: data)
+
+//=======
+//
+//        let data = WathclistModel(crypto: .BTC, stock: .AEX, cryptoValue: "38500", cryptoDifference: "+10.5", stockValue: "345000", stockDifference: "-0.5")
+//        let analysisModel = AnalysisModel(timeRange: .Day, watchlist: data)
+//
+//        WatchListCard(id: UUID(), isEditable: true, edit: {}, cryptoTicker: "BTC", stockTicker: "NASDAQ", watchListItem: analysisModel)
+//>>>>>>> main
     }
 }

@@ -7,13 +7,13 @@
 import Foundation
 
 struct SearchStockModel: Codable {
-    let bestMatches: [BestMatch]
+    let bestMatches: [BestMatch]?
 }
 
 struct BestMatch: Codable {
-    let symbol, name, type, region: String
-    let marketOpen, marketClose, timezone, currency: String
-    let matchScore: String
+    let symbol, name, type, region: String?
+    let marketOpen, marketClose, timezone, currency: String?
+    let matchScore: String?
 
     enum CodingKeys: String, CodingKey {
         case symbol = "1. symbol"
