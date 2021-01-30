@@ -16,6 +16,7 @@ public class EmptyResponse: Codable {
 
 final class NetworkManager {
         
+    static let shared = NetworkManager()
     public init(sessionManager: Alamofire.Session = Alamofire.Session(configuration: URLSessionConfiguration.default)) {
         self.session = sessionManager
     }
@@ -37,7 +38,6 @@ final class NetworkManager {
                         encoding: URLEncoding.default)
             .validate()
             .response(responseSerializer: DataResponseSerializer(emptyResponseCodes: possibleEmptyBodyResponseCodes), completionHandler: { (response) in
-                print(response.request)
                 switch response.result {
                 case .success(let data):
                     guard !data.isEmpty else {
@@ -47,20 +47,10 @@ final class NetworkManager {
                     
                     do {
                         let decodedObject = try JSONDecoder().decode(type, from: data)
-                        print(decodedObject)
                         completion(.success(decodedObject))
                     } catch let err {
                         completion(.failure(err))
-                        print(err)
                     }
-                    
-                    do {
-                        let decodedObject = try JSONDecoder().decode([String: String].self, from: data)
-                        print(decodedObject)
-                    } catch let err {
-                        completion(.failure(err))
-                    }
-                    
                 case .failure(let error):
                     completion(.failure(error))
                 }
@@ -91,14 +81,12 @@ final class NetworkManager {
         request(type: CryptoModel.self, endpoint: .genericCrypto(query: CryptoQueryModel(interval: cryptoTimeRange ?? .daily, numberOfData: 7, symbol: comparison.crypto.id))) { (result) in
             switch result {
             case .success(let data):
-                print(data)
                 cryptoData = data
                 if  let cryptoData = cryptoData, let stock = stockData {
                     let comparisonData = ComparisonValueModel(timeRange: comparison.timeRange, cryptoName: comparison.crypto, stockName: comparison.stock, crypto: cryptoData, stock: stock)
                     completion(.success(comparisonData))
                 }
             case .failure(let err):
-                print(err)
                 completion(.failure(err))
             }
         }
@@ -112,7 +100,6 @@ final class NetworkManager {
                     completion(.success(comparisonData))
                 }
             case .failure(let err):
-                print(err)
                 completion(.failure(err))
             }
         }
