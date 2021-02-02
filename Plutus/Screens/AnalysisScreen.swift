@@ -102,10 +102,8 @@ struct AnalysisScreen: View {
     
     private func updateData() {
         let comparisons = DefaultComparisons.comparison
-        manager = NetworkManager()
-        
         comparisons.forEach { (comparison) in
-            manager?.requestComparison(comparison: comparison) { (result) in
+            NetworkManager.shared.requestComparison(comparison: comparison) { (result) in
                 switch result {
                 case .success(let data):
                     print(data)
