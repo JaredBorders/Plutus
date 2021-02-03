@@ -1,6 +1,5 @@
 # Plutus
 iOS application built with SwiftUI that provides users a way to easily compare cryptocurrencies to publicly traded companies/indexes
-## Motivation
 
 ## Motivation
 WhatTheHack? presented teams with a challenge to build a native iOS application. Something that could be helpful, unique, or just fun to use.
