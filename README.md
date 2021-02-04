@@ -12,7 +12,8 @@ then plotting this data side-by-side on the same chart could offer unpredicted i
 ## Technology
 SwiftUI <br />
 Alamofire Networking Library <br />
-Coinbase <br />
+polygon.io <br />
+coingecko <br />
 
 ## Demo
 Coming Soon!!!
