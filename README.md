@@ -1,3 +1,9 @@
+<div>
+  <p align="center">
+    <img src="/AppIcon 1.png?raw=true" width="150" height="150" alt="CovidTracker-Plus App Icon"/>
+  </p>
+</div>
+
 # Plutus
 iOS application built with SwiftUI that provides users a way to easily compare cryptocurrencies to publicly traded companies/indexes
 
